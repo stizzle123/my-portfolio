@@ -22,7 +22,7 @@ const UI: React.FC<IProps> = ({ title, setTitle, timeline, setTimeline }) => {
       <Xtraders {...{ setTitle, setTimeline }} />
       <Rsedge {...{ setTitle, setTimeline }} />
       <Germiny {...{ setTitle, setTimeline }} />
-      <WorkHistory />
+      <WorkHistory {...{ setTitle, setTimeline }} />
     </>
   );
 };

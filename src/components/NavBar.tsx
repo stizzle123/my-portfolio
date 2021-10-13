@@ -151,12 +151,24 @@ const NavBar = ({ title, timeline }: IProps) => {
           </Box>
 
           <Box>
-            <IconButton>
-              <GitHub sx={{ color: colors.lightGrey }} />
-            </IconButton>
-            <IconButton>
-              <LinkedIn sx={{ color: colors.lightGrey }} />
-            </IconButton>
+            <a
+              href="https://github.com/stizzle123"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <IconButton>
+                <GitHub sx={{ color: colors.lightGrey }} />
+              </IconButton>
+            </a>
+            <a
+              href="https://linkedin.com/in/olatubosun-arifayan "
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <IconButton>
+                <LinkedIn sx={{ color: colors.lightGrey }} />
+              </IconButton>
+            </a>
 
             <IconButton>
               <Avatar

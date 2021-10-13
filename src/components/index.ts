@@ -1,3 +1,4 @@
+import GridListItems from "./GridListItems";
 import NavBar from "./NavBar";
 
-export { NavBar };
+export { NavBar, GridListItems };

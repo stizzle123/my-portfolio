@@ -5,17 +5,21 @@ const TopSection = () => {
   const [matches] = useResponsive();
 
   return (
-    <div style={{ height: "50vh" }}>
+    <div
+      style={{
+        height: matches ? "100%" : "50vh",
+        marginBottom: matches ? 50 : 0,
+      }}
+    >
       <Typography
         gutterBottom
         variant={matches ? "h4" : "h3"}
         sx={{
           width: matches ? "100%" : 600,
-          marginTop: 20,
+          marginTop: 10,
         }}
       >
-        I offer immense value to companies looking for a frontend/fullstack
-        developer.
+        I offer great value to companies looking to hire a frontend developer.
       </Typography>
     </div>
   );
