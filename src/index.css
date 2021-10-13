@@ -1,0 +1,8 @@
+body {
+  color: "#a0989e";
+}
+
+.active {
+  color: #5e5d5e;
+  border-bottom: 1px solid red;
+}
