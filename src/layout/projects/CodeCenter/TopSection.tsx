@@ -1,26 +1,30 @@
-import { useEffect, useRef, useState } from "react";
 import { Typography } from "@mui/material";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useViewportScroll,
+  useTransform,
+} from "framer-motion";
 
 import { useStyles } from "../../../theme";
 import useResponsive from "../../../hooks/useResponsive";
+import useRefScrollProgress from "../../../hooks/useRefScrollProgress";
+import clsx from "clsx";
 
 const TopSection = () => {
   const classes = useStyles();
-  const ref = useRef<HTMLDivElement>(null);
+  const { start, end, ref } = useRefScrollProgress();
 
   const [matches] = useResponsive();
-  const [opacity, setOpacity] = useState(0);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const scroll = window.scrollY;
-      const elemHeight = ref.current?.clientHeight!;
-      const opacity: number = 1 - (elemHeight - scroll) / elemHeight;
+  const { scrollYProgress } = useViewportScroll();
 
-      setOpacity(opacity);
-    });
-  }, []);
+  const opacity = useTransform(
+    scrollYProgress,
+    //@ts-ignore
+    [start, end],
+    [0.5, 1]
+  );
 
   const spring = {
     type: "spring",
@@ -30,7 +34,7 @@ const TopSection = () => {
 
   return (
     <AnimatePresence>
-      <motion.div className={classes.codecenterContainer} ref={ref}>
+      <motion.div className={clsx(classes.codecenterContainer)} ref={ref}>
         <motion.div
           style={{
             opacity: opacity ? opacity : 1,

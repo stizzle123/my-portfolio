@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { Grid, Typography, useTheme, useMediaQuery } from "@mui/material";
 import clsx from "clsx";
 import {
@@ -9,15 +8,23 @@ import {
 } from "framer-motion";
 import { useStyles } from "../theme";
 import { colors } from "../utilities/colors";
+import useRefScrollProgress from "../hooks/useRefScrollProgress";
 
 function Header() {
   const classes = useStyles();
   const theme = useTheme();
-  const ref = useRef<HTMLDivElement>(null);
+  const { start, end, ref } = useRefScrollProgress();
 
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const { scrollY } = useViewportScroll();
+  const { scrollYProgress } = useViewportScroll();
+
+  const opacity = useTransform(
+    scrollYProgress,
+    //@ts-ignore
+    [start, end],
+    [1, 0]
+  );
 
   const parentVariants = {
     hidden: {
@@ -62,18 +69,6 @@ function Header() {
       transition,
     },
   };
-
-  const opacity = useTransform(
-    scrollY,
-    [0, ref?.current?.offsetHeight! / 2, ref?.current?.offsetHeight!],
-    [0.8, 0.2, 0]
-  );
-
-  // const spring = {
-  //   type: "spring",
-  //   damping: 10,
-  //   stiffness: 100,
-  // };
 
   return (
     <AnimatePresence>

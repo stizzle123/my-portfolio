@@ -76,7 +76,7 @@ const NavBar = ({ title, timeline }: IProps) => {
                 fontSize: matches ? 12 : 14,
               }}
             >
-              {title ? title : "A/O."}{" "}
+              {title}{" "}
               {timeline && (
                 <span
                   style={{
@@ -105,7 +105,7 @@ const NavBar = ({ title, timeline }: IProps) => {
               </Link>
               <Link
                 activeClass={classes.linkActive}
-                to="section1"
+                to="xtraders"
                 spy={true}
                 smooth={true}
                 offset={-70}
@@ -157,17 +157,16 @@ const NavBar = ({ title, timeline }: IProps) => {
             <IconButton>
               <LinkedIn sx={{ color: colors.lightGrey }} />
             </IconButton>
-            <Hidden smDown>
-              <IconButton>
-                <Avatar
-                  src="/img/idowu.jpg"
-                  sx={{
-                    width: 25,
-                    height: 25,
-                  }}
-                />
-              </IconButton>
-            </Hidden>
+
+            <IconButton>
+              <Avatar
+                src="/img/idowu.jpg"
+                sx={{
+                  width: 25,
+                  height: 25,
+                }}
+              />
+            </IconButton>
           </Box>
         </Toolbar>
       </AppBar>

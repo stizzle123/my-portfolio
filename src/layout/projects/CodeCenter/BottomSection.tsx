@@ -40,7 +40,7 @@ const BottomSection = () => {
       <Grid
         container
         direction={matches ? "column-reverse" : "row"}
-        spacing={3}
+        spacing={5}
       >
         <Grid item md={6} sm={12}>
           <motion.img
@@ -109,7 +109,7 @@ const BottomSection = () => {
                     alt="codecenter2"
                     srcSet="/img/codecenter-lg-2.png 2x"
                     className={clsx(classes.imgWrapper)}
-                    style={{ marginTop: 150 }}
+                    style={{ marginTop: 100 }}
                     initial={{
                       y: -20,
                     }}

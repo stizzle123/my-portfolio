@@ -3,11 +3,7 @@ import { useInView } from "react-intersection-observer";
 
 import BottomSection from "./BottomSection";
 import TopSection from "./TopSection";
-
-interface IProps {
-  setTitle: any;
-  setTimeline: any;
-}
+import { IProps } from "../../../types";
 
 const CodeCenter = ({ setTitle, setTimeline }: IProps) => {
   const { ref, inView } = useInView({
@@ -18,10 +14,11 @@ const CodeCenter = ({ setTitle, setTimeline }: IProps) => {
     if (inView) {
       setTitle("Instructor");
       setTimeline("2017 - 2019");
-    } else {
+    }
+    return () => {
       setTitle(null);
       setTimeline(null);
-    }
+    };
   }, [setTitle, inView, setTimeline]);
 
   return (
