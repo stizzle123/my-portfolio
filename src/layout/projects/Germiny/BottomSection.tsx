@@ -140,7 +140,7 @@ const BottomSection = () => {
         alignItems="center"
         style={{ marginTop: 100 }}
       >
-        <Grid item md={8} xs={12}>
+        <Grid item md={10} xs={12}>
           <Typography
             variant={matches ? "h3" : "h2"}
             sx={{
@@ -154,7 +154,20 @@ const BottomSection = () => {
             gutterBottom
             align="center"
           >
-            Medicare at your fingertips
+            Simplicity is the goal
+          </Typography>
+          <Typography
+            gutterBottom
+            sx={{
+              color: colors.lightPurpleText,
+              width: matches ? "100%" : 600,
+              margin: "auto",
+              marginBottom: 5,
+            }}
+          >
+            The UI was designed to ensure that every detail about what Germiny
+            is about is captured at first glance. We aimed to keep it simple and
+            informative at the same time.
           </Typography>
           <img
             src="/img/germiny-about-sm.png"
