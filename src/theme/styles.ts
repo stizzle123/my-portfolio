@@ -63,7 +63,7 @@ const useStyles = makeStyles(
     overlay: {
       height: "100%",
       background: theme.palette.primary.main,
-      zIndex: 2,
+      zIndex: 3,
       position: "absolute",
       top: 0,
       left: 0,
@@ -161,6 +161,15 @@ const useStyles = makeStyles(
         padding: theme.spacing(0.5, 1),
         background: "url(/img/doctor-sm.jpeg),  rgba(0,0,0,0.3)",
         height: "50vh",
+      },
+    },
+    resumeContainer: {
+      background: theme.palette.primary.main,
+      color: colors.white,
+      padding: theme.spacing(3),
+
+      [theme.breakpoints.down("sm")]: {
+        padding: theme.spacing(0.5, 1),
       },
     },
   }),

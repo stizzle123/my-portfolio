@@ -138,14 +138,14 @@ const NavBar = ({ title, timeline }: IProps) => {
               </Link>
               <Link
                 activeClass={classes.linkActive}
-                to="section1"
+                to="resume"
                 spy={true}
                 smooth={true}
                 offset={-70}
                 duration={500}
                 className={classes.link}
               >
-                More
+                Résumé
               </Link>
             </Hidden>
           </Box>

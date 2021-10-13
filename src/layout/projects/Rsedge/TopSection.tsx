@@ -10,6 +10,7 @@ import {
 import { useStyles } from "../../../theme";
 import useResponsive from "../../../hooks/useResponsive";
 import useRefScrollProgress from "../../../hooks/useRefScrollProgress";
+import Overlay from "../../../components/Overlay";
 
 const TopSection = () => {
   const classes = useStyles();
@@ -26,24 +27,10 @@ const TopSection = () => {
     [0.5, 1]
   );
 
-  const spring = {
-    type: "spring",
-    damping: 600,
-    stiffness: 300,
-  };
   return (
     <AnimatePresence>
       <motion.div className={clsx(classes.rsedgeContainer)} ref={ref}>
-        <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          style={{
-            opacity: opacity,
-          }}
-          className={classes.overlay}
-          transition={spring}
-        />
+        <Overlay {...{ opacity }} />
         <div style={{ position: "absolute", zIndex: 3, top: "20%" }}>
           <Typography
             variant={matches ? "h3" : "h2"}

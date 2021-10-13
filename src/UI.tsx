@@ -3,6 +3,7 @@ import { Header } from "./layout";
 import CodeCenter from "./layout/projects/CodeCenter";
 import Germiny from "./layout/projects/Germiny";
 import Rsedge from "./layout/projects/Rsedge";
+import WorkHistory from "./layout/projects/WorkHistory";
 import Xtraders from "./layout/projects/Xtraders";
 
 interface IProps {
@@ -21,6 +22,7 @@ const UI: React.FC<IProps> = ({ title, setTitle, timeline, setTimeline }) => {
       <Xtraders {...{ setTitle, setTimeline }} />
       <Rsedge {...{ setTitle, setTimeline }} />
       <Germiny {...{ setTitle, setTimeline }} />
+      <WorkHistory />
     </>
   );
 };
