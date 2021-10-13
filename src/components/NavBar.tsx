@@ -116,7 +116,7 @@ const NavBar = ({ title, timeline }: IProps) => {
               </Link>
               <Link
                 activeClass={classes.linkActive}
-                to="section1"
+                to="rsedge"
                 spy={true}
                 smooth={true}
                 offset={-70}
@@ -127,7 +127,7 @@ const NavBar = ({ title, timeline }: IProps) => {
               </Link>
               <Link
                 activeClass={classes.linkActive}
-                to="section1"
+                to="germiny"
                 spy={true}
                 smooth={true}
                 offset={-70}

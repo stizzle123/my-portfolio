@@ -1,11 +1,11 @@
 import { Typography } from "@mui/material";
-import clsx from "clsx";
 import {
   AnimatePresence,
   motion,
   useViewportScroll,
   useTransform,
 } from "framer-motion";
+import clsx from "clsx";
 
 import { useStyles } from "../../../theme";
 import useResponsive from "../../../hooks/useResponsive";
@@ -31,15 +31,13 @@ const TopSection = () => {
     damping: 600,
     stiffness: 300,
   };
+
   return (
     <AnimatePresence>
-      <motion.div className={clsx(classes.rsedgeContainer)} ref={ref}>
+      <motion.div className={clsx(classes.germinyContainer)} ref={ref}>
         <motion.div
-          initial={{
-            opacity: 0,
-          }}
           style={{
-            opacity: opacity,
+            opacity: opacity ? opacity : 1,
           }}
           className={classes.overlay}
           transition={spring}
@@ -53,16 +51,16 @@ const TopSection = () => {
             }}
             gutterBottom
           >
-            RS EDGE
+            Germiny
           </Typography>
           <Typography
             className={classes.lightPurpleText}
             sx={{ width: matches ? "100%" : 600 }}
           >
-            RS EDGE is an enterprise resource planning application built
-            specifically to suit the needs of Russelsmith Nigeria. An oil and
-            gas firm located in Lagos. This platform allows users to make
-            requisitions, budgets, inventory, user management and many more.
+            Germiny is a platform that provides easy access to medical care by
+            leveraging the power of technology. Providing jobs for medical
+            practitioners where they can make money at their spare time, also by
+            providing a concierge service.
           </Typography>
         </div>
       </motion.div>

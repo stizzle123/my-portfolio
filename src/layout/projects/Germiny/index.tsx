@@ -1,29 +1,28 @@
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import BottomSection from "./BottomSection";
 import TopSection from "./TopSection";
 import { IProps } from "../../../types";
+import BottomSection from "./BottomSection";
 
-const CodeCenter = ({ setTitle, setTimeline }: IProps) => {
+const Germiny = ({ setTitle, setTimeline }: IProps) => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
 
   useEffect(() => {
-    //@ts-ignore
     if (inView) {
-      setTitle("Instructor");
-      setTimeline("2017 - 2019");
+      setTitle("Frontend Developer");
+      setTimeline("2021 (Contract)");
     }
   }, [setTitle, inView, setTimeline]);
 
   return (
-    <div id="codecenter" ref={ref}>
+    <div id="germiny" ref={ref}>
       <TopSection />
       <BottomSection />
     </div>
   );
 };
 
-export default CodeCenter;
+export default Germiny;

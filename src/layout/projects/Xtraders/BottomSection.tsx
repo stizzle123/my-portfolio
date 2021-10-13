@@ -36,13 +36,7 @@ const BottomSection = () => {
 
   return (
     <AnimatePresence>
-      <div
-        className={clsx(classes.container)}
-        style={{
-          height: matches ? "100%" : "200vh",
-        }}
-        ref={ref}
-      >
+      <div className={clsx(classes.container)} ref={ref}>
         <Grid
           container
           direction={matches ? "column-reverse" : "row"}
@@ -95,6 +89,7 @@ const BottomSection = () => {
                   letterSpacing: 2,
                   width: matches ? "100%" : 400,
                   textTransform: "capitalize",
+                  color: colors.darkbrown,
                 }}
                 gutterBottom
               >
@@ -137,7 +132,7 @@ const BottomSection = () => {
             </div>
           </Grid>
         </Grid>
-        <Grid container spacing={5} style={{ marginTop: 100 }}>
+        <Grid container spacing={5} style={{ marginTop: matches ? 20 : 100 }}>
           <Grid item xs={12} md={6}>
             <div>
               <Typography

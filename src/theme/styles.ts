@@ -1,4 +1,4 @@
-import { Theme } from "@mui/material";
+import { Theme, darken } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { colors } from "../utilities/colors";
 
@@ -45,6 +45,16 @@ const useStyles = makeStyles(
         color: colors.lightGrey,
       },
     },
+    link2: {
+      cursor: "pointer",
+      transition: "color 300ms ease-out",
+      color: colors.lightGrey,
+      textDecoration: "underline",
+      fontSize: 13,
+      "&:hover": {
+        color: darken(colors.lightGrey, 0.2),
+      },
+    },
     linkActive: {
       color: colors.white,
       borderBottom: `1px solid #FF0000`,
@@ -53,7 +63,7 @@ const useStyles = makeStyles(
     overlay: {
       height: "100%",
       background: theme.palette.primary.main,
-      zIndex: 1,
+      zIndex: 2,
       position: "absolute",
       top: 0,
       left: 0,
@@ -86,7 +96,7 @@ const useStyles = makeStyles(
     },
 
     codecenterContainer: {
-      background: "url(/img/code-lg.jpeg), rgba(0,0,0,0.15)",
+      background: "url(/img/code-lg.jpeg), rgba(0,0,0,0.2)",
       height: "80vh",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
@@ -99,11 +109,12 @@ const useStyles = makeStyles(
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
         backgroundImage: "url(/img/code-sm.jpeg)",
+        height: "50vh",
       },
     },
     xtradersContainer: {
       height: "80vh",
-      background: "url(/img/handshake.jpeg), rgba(0,0,0,0.15)",
+      background: "url(/img/handshake.jpeg), rgba(0,0,0,0.5)",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
@@ -120,7 +131,7 @@ const useStyles = makeStyles(
     },
     rsedgeContainer: {
       height: "80vh",
-      background: "url(/img/handshake.jpeg), rgba(0,0,0,0.15)",
+      background: "url(/img/planning.jpeg), rgba(0,0,0,0.2)",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
@@ -131,7 +142,24 @@ const useStyles = makeStyles(
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
-        backgroundImage: "url(/img/handshake-sm.jpeg)",
+        background: "url(/img/planning-sm.jpeg),  rgba(0,0,0,0.3)",
+        height: "50vh",
+      },
+    },
+    germinyContainer: {
+      height: "80vh",
+      background: "url(/img/doctor-lg.jpeg), rgba(0,0,0,0.2)",
+      backgroundAttachment: "fixed",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      backgroundBlendMode: "overlay",
+      color: "#fff",
+      position: "relative",
+      padding: theme.spacing(3),
+      [theme.breakpoints.down("sm")]: {
+        padding: theme.spacing(0.5, 1),
+        background: "url(/img/doctor-sm.jpeg),  rgba(0,0,0,0.3)",
         height: "50vh",
       },
     },

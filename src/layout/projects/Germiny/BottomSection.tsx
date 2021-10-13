@@ -44,12 +44,15 @@ const BottomSection = () => {
       >
         <Grid item md={6} sm={12}>
           <motion.img
-            src="/img/codecenter-sm.png"
-            alt="codecenter"
-            srcSet="/img/codecenter-lg.png 2x"
+            src="/img/germiny-sm.png"
+            alt="germiny home"
+            srcSet="/img/germiny.png 2x"
             className={clsx(classes.imgWrapper, classes.imgAbsolute)}
             animate={controls}
             draggable={false}
+            style={{
+              borderWidth: 0,
+            }}
           />
         </Grid>
         <Grid item md={6} sm={12}>
@@ -65,7 +68,7 @@ const BottomSection = () => {
               }}
               gutterBottom
             >
-              The Bootcamp for everyone.
+              Medicare at your fingertips
             </Typography>
             <Typography
               gutterBottom
@@ -73,11 +76,9 @@ const BottomSection = () => {
                 color: colors.lightPurpleText,
               }}
             >
-              This was one of my earliest projects, it was built using bootstrap
-              as the UI library and sass as the css preprocessor. We had several
-              options for design as at the time, but eventually settled for
-              something simple and direct. PHP was used as the backend
-              technology.
+              Germiny was built using ReactJS, Redux-toolkit, and Material-UI
+              for the frontend while the backend was developed using NodeJS,
+              expressjs, mongodb and so much more.
             </Typography>
             <Typography
               gutterBottom
@@ -90,10 +91,10 @@ const BottomSection = () => {
               }}
               variant="caption"
             >
-              To learn more about The Code Center
+              To learn more about Germiny
             </Typography>
             <a
-              href="https://thecodecenter.org/"
+              href="https://germiny.org/"
               target="_blank"
               rel="noreferrer noopener"
               style={{ textDecoration: "none", color: "inherit" }}
@@ -106,9 +107,9 @@ const BottomSection = () => {
               <InView>
                 {({ ref, inView }) => (
                   <motion.img
-                    src="/img/codecenter-lg-2.png"
-                    alt="codecenter2"
-                    srcSet="/img/codecenter-lg-2.png 2x"
+                    src="/img/germiny-product-sm.png"
+                    alt="germiny product"
+                    srcSet="/img/germiny-product.png 2x"
                     className={clsx(classes.imgWrapper)}
                     style={{ marginTop: 100 }}
                     initial={{
@@ -131,6 +132,36 @@ const BottomSection = () => {
               </InView>
             </Hidden>
           </div>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        style={{ marginTop: 100 }}
+      >
+        <Grid item md={8} xs={12}>
+          <Typography
+            variant={matches ? "h3" : "h2"}
+            sx={{
+              fontWeight: 800,
+              letterSpacing: 2,
+              width: matches ? "100%" : 400,
+              textTransform: "capitalize",
+              color: colors.darkbrown,
+              margin: "10px auto",
+            }}
+            gutterBottom
+            align="center"
+          >
+            Medicare at your fingertips
+          </Typography>
+          <img
+            src="/img/germiny-about-sm.png"
+            srcSet="/img/germiny-about.png 2x"
+            alt="Germiny about UI"
+            className={clsx(classes.imgWrapper)}
+          />
         </Grid>
       </Grid>
     </div>

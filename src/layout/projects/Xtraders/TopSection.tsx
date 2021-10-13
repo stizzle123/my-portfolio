@@ -39,7 +39,7 @@ const TopSection = () => {
             opacity: 0,
           }}
           style={{
-            opacity: opacity ? opacity : 1,
+            opacity: opacity,
           }}
           className={classes.overlay}
           transition={spring}

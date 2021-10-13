@@ -6,6 +6,8 @@ import {
   useViewportScroll,
   AnimatePresence,
 } from "framer-motion";
+import { Link } from "react-scroll";
+
 import { useStyles } from "../theme";
 import { colors } from "../utilities/colors";
 import useRefScrollProgress from "../hooks/useRefScrollProgress";
@@ -102,10 +104,26 @@ function Header() {
                 </Typography>
               </motion.div>
               <motion.div variants={childVariants}>
-                <Typography variant="subtitle1" color={colors.lightPurpleText}>
+                <Typography
+                  variant="subtitle1"
+                  color={colors.lightPurpleText}
+                  gutterBottom
+                >
                   I build amazing products using modern technologies as well as
                   adopting best practices.
                 </Typography>
+              </motion.div>
+              <motion.div variants={childVariants}>
+                <Link
+                  to="codecenter"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={800}
+                  className={classes.link2}
+                >
+                  Check out my work below.
+                </Link>
               </motion.div>
             </motion.div>
           </Grid>

@@ -5,11 +5,11 @@ import {
   useViewportScroll,
   useTransform,
 } from "framer-motion";
+import clsx from "clsx";
 
 import { useStyles } from "../../../theme";
 import useResponsive from "../../../hooks/useResponsive";
 import useRefScrollProgress from "../../../hooks/useRefScrollProgress";
-import clsx from "clsx";
 
 const TopSection = () => {
   const classes = useStyles();
@@ -36,8 +36,11 @@ const TopSection = () => {
     <AnimatePresence>
       <motion.div className={clsx(classes.codecenterContainer)} ref={ref}>
         <motion.div
+          initial={{
+            opacity: 0,
+          }}
           style={{
-            opacity: opacity ? opacity : 1,
+            opacity,
           }}
           className={classes.overlay}
           transition={spring}

@@ -1,6 +1,7 @@
 import { NavBar } from "./components";
 import { Header } from "./layout";
 import CodeCenter from "./layout/projects/CodeCenter";
+import Germiny from "./layout/projects/Germiny";
 import Rsedge from "./layout/projects/Rsedge";
 import Xtraders from "./layout/projects/Xtraders";
 
@@ -19,6 +20,7 @@ const UI: React.FC<IProps> = ({ title, setTitle, timeline, setTimeline }) => {
       <CodeCenter {...{ setTitle, setTimeline }} />
       <Xtraders {...{ setTitle, setTimeline }} />
       <Rsedge {...{ setTitle, setTimeline }} />
+      <Germiny {...{ setTitle, setTimeline }} />
     </>
   );
 };

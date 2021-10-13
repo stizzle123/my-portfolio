@@ -17,9 +17,6 @@ const Xtraders = ({ setTitle, setTimeline }: IProps) => {
     if (inView) {
       setTitle("Freelance");
       setTimeline("2020 (Contract)");
-    } else {
-      setTitle(null);
-      setTimeline(null);
     }
   }, [setTitle, inView, setTimeline]);
 

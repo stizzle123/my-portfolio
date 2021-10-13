@@ -11,11 +11,11 @@ const useRefScrollProgress = () => {
     }
     //@ts-ignore
     const rect = ref.current.getBoundingClientRect()!;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const offsetTop = rect.top + scrollTop;
     setStart(offsetTop / document.body.clientHeight);
     setEnd((offsetTop + rect.height) / document.body.clientHeight);
-  }, [start, end]);
+  }, [start, end, ref]);
   return { ref, start, end };
 };
 
