@@ -80,7 +80,6 @@ function Header() {
           justifyContent="center"
           alignItems="center"
           className={clsx(classes.headerContainer)}
-          style={{ overflow: "scroll" }}
         >
           <Grid item>
             <motion.div

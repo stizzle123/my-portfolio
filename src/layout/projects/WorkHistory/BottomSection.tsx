@@ -43,7 +43,7 @@ const jobs: ItemProps[] = [
 const BottomSection = () => {
   return (
     <div>
-      <Typography>Job History</Typography>
+      <Typography gutterBottom>Job History</Typography>
       {jobs.map((item, index) => (
         <GridListItems
           key={index}

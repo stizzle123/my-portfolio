@@ -1,11 +1,11 @@
-import { useRef, useState, useLayoutEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const useRefScrollProgress = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!ref.current) {
       return;
     }

@@ -154,10 +154,10 @@ const BottomSection = () => {
                 }}
               >
                 The interface was designed with the intention to make it easy
-                for users to filter through products as well as create products
-                while on the same page. Items rendered on this page leverages
-                geolocation by default, using a 200 metre radius from your
-                current position.
+                for users to filter through product list items as well as create
+                products while on the same page. Items rendered on this page
+                leverages geolocation by default, using a 200 metre radius from
+                your current position.
               </Typography>
             </div>
           </Grid>

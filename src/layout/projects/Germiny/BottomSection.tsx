@@ -78,7 +78,7 @@ const BottomSection = () => {
             >
               Germiny was built using ReactJS, Redux-toolkit, and Material-UI
               for the frontend while the backend was developed using NodeJS,
-              expressjs, mongodb and so much more.
+              Expressjs, Mongodb and so much more.
             </Typography>
             <Typography
               gutterBottom
