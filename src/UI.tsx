@@ -1,3 +1,5 @@
+import { useTransform, motion, useViewportScroll } from "framer-motion";
+
 import { NavBar } from "./components";
 import { Header } from "./layout";
 import CodeCenter from "./layout/projects/CodeCenter";
@@ -14,8 +16,34 @@ interface IProps {
 }
 
 const UI: React.FC<IProps> = ({ title, setTitle, timeline, setTimeline }) => {
+  const { scrollYProgress } = useViewportScroll();
+  const width = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  const transition = {
+    type: "spring",
+    stiffness: 120,
+    damping: 60,
+  };
+
   return (
     <>
+      <motion.div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          height: 1,
+          zIndex: 9999999999999,
+          background: "red",
+          width: "100%",
+          scaleX: width,
+          originX: 0,
+        }}
+        initial={{
+          originX: 0,
+        }}
+        transition={transition}
+      />
       <Header />
       <NavBar {...{ title, timeline }} />
       <CodeCenter {...{ setTitle, setTimeline }} />

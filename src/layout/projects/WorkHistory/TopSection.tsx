@@ -1,4 +1,6 @@
 import { Typography } from "@mui/material";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+
 import useResponsive from "../../../hooks/useResponsive";
 import { useStyles } from "../../../theme";
 
@@ -26,10 +28,12 @@ const TopSection = () => {
       <a
         className={classes.link2}
         href="mailto:arifayanidowu@gmail.com?subject=I've%20got%20a%20job%20for%20you"
-        target="_top"
-        style={{ fontSize: 15 }}
+        target="_blank"
+        rel="noreferrer"
+        style={{ fontSize: 15, display: "flex", width: "fit-content" }}
       >
         Get in touch
+        <ArrowRightAltIcon />
       </a>
     </div>
   );

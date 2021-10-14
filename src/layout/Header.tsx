@@ -88,7 +88,6 @@ function Header() {
               exit="exit"
               style={{
                 opacity,
-                overflow: "scroll",
               }}
               variants={parentVariants}
             >

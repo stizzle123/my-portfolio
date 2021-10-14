@@ -27,7 +27,8 @@ const Footer = () => {
       </Typography>
       <a
         href="mailto:arifayanidowu@gmail.com?subject=I've%20got%20a%20job%20for%20you"
-        target="_top"
+        target="_blank"
+        rel="noreferrer"
         style={{
           textDecoration: "none",
           display: "block",

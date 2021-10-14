@@ -169,7 +169,7 @@ const BottomSection = () => {
                     style={{
                       position: "absolute",
                       right: 0,
-                      top: matches ? 5 : 10,
+                      top: matches ? -45 : -50,
                       zIndex: 10,
                     }}
                   >
