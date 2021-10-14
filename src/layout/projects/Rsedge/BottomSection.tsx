@@ -48,7 +48,9 @@ const BottomSection = () => {
         </Typography>
       </Box>
       <div style={{ position: "relative" }}>
-        <div style={{ position: "absolute", right: 0, top: matches ? 0 : 70 }}>
+        <div
+          style={{ position: "absolute", right: 0, top: matches ? -45 : -50 }}
+        >
           <CustomTooltip placement="left" arrow title="Toggle theme">
             <span>
               <CustomSwitch
