@@ -15,7 +15,7 @@ const useRefScrollProgress = () => {
     const offsetTop = rect.top + scrollTop;
     setStart(offsetTop / document.body.clientHeight);
     setEnd((offsetTop + rect.height) / document.body.clientHeight);
-  }, [start, end]);
+  }, [start, end, ref]);
   return { ref, start, end };
 };
 
