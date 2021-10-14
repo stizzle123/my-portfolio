@@ -1,8 +1,10 @@
 import { Typography } from "@mui/material";
 import useResponsive from "../../../hooks/useResponsive";
+import { useStyles } from "../../../theme";
 
 const TopSection = () => {
   const [matches] = useResponsive();
+  const classes = useStyles();
 
   return (
     <div
@@ -21,6 +23,14 @@ const TopSection = () => {
       >
         I offer great value to companies looking to hire a frontend developer.
       </Typography>
+      <a
+        className={classes.link2}
+        href="mailto:arifayanidowu@gmail.com?subject=I've%20got%20a%20job%20for%20you"
+        target="_top"
+        style={{ fontSize: 15 }}
+      >
+        Get in touch
+      </a>
     </div>
   );
 };
