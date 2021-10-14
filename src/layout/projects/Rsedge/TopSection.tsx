@@ -51,8 +51,8 @@ const TopSection = () => {
 
   return (
     <AnimatePresence>
-      <div ref={refObj}>
-        <motion.div className={clsx(classes.rsedgeContainer)} ref={ref}>
+      <div ref={ref}>
+        <motion.div className={clsx(classes.rsedgeContainer)} ref={refObj}>
           <Overlay {...{ opacity }} />
           <div style={{ position: "absolute", zIndex: 3, top: "20%" }}>
             <motion.div

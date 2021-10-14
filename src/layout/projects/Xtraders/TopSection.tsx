@@ -50,8 +50,8 @@ const TopSection = () => {
 
   return (
     <AnimatePresence>
-      <div ref={refObj}>
-        <motion.div className={clsx(classes.xtradersContainer)} ref={ref}>
+      <div ref={ref}>
+        <motion.div className={clsx(classes.xtradersContainer)} ref={refObj}>
           <Overlay {...{ opacity }} />
           <div
             style={{
