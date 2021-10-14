@@ -26,7 +26,7 @@ const Footer = () => {
         Let's build something amazing together
       </Typography>
       <a
-        href="mailto:arifayanidowu@gmail.com?Subject=I've%20got%20a%20job%20for%20you"
+        href="mailto:arifayanidowu@gmail.com?subject=I've%20got%20a%20job%20for%20you"
         target="_top"
         style={{
           textDecoration: "none",

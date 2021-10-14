@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { GitHub, LinkedIn } from "@mui/icons-material";
 import {
   AppBar,
@@ -12,10 +14,11 @@ import {
 } from "@mui/material";
 import clsx from "clsx";
 import { Link } from "react-scroll";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { useStyles } from "../theme";
 import { colors } from "../utilities/colors";
+import CustomModal from "./CustomModal";
 
 interface IProps {
   title: string;
@@ -24,6 +27,7 @@ interface IProps {
 
 const NavBar = ({ title, timeline }: IProps) => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -49,8 +53,13 @@ const NavBar = ({ title, timeline }: IProps) => {
     },
   };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
-    <AnimatePresence key={title} exitBeforeEnter>
+    <>
+      <CustomModal {...{ open, handleClose }} />
       <AppBar
         className={classes.appBar}
         position="sticky"
@@ -170,7 +179,7 @@ const NavBar = ({ title, timeline }: IProps) => {
               </IconButton>
             </a>
 
-            <IconButton>
+            <IconButton onClick={() => setOpen(true)}>
               <Avatar
                 src="/img/idowu.jpg"
                 sx={{
@@ -182,7 +191,7 @@ const NavBar = ({ title, timeline }: IProps) => {
           </Box>
         </Toolbar>
       </AppBar>
-    </AnimatePresence>
+    </>
   );
 };
 
