@@ -24,6 +24,7 @@ const useStyles = makeStyles(
       color: colors.white,
       padding: theme.spacing(5, 1.5),
       [theme.breakpoints.down("sm")]: {
+        height: "70vh",
         padding: theme.spacing(0.5, 1),
       },
     },
