@@ -6,6 +6,7 @@ const useStyles = makeStyles(
   (theme: Theme) => ({
     appBar: {
       color: "inherit",
+      height: "10vh",
     },
     container: {
       position: "relative",
@@ -40,7 +41,7 @@ const useStyles = makeStyles(
       color: colors.lightPurpleText,
       height: "100%",
       display: "inline-block",
-      padding: theme.spacing(2.9, 0),
+      padding: theme.spacing(2.5, 0),
       "&:hover": {
         color: colors.lightGrey,
       },
@@ -96,7 +97,7 @@ const useStyles = makeStyles(
     },
 
     codecenterContainer: {
-      background: "url(/img/code-lg.jpeg), rgba(0,0,0,0.2)",
+      background: "url(/img/code-lg.jpeg), rgba(0,0,0,0.5)",
       height: "80vh",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
@@ -108,7 +109,7 @@ const useStyles = makeStyles(
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
-        background: "url(/img/code-sm.jpeg,  rgba(0,0,0,0.3))",
+        background: "url(/img/code-sm.jpeg,  rgba(0,0,0,0.5))",
         height: "50vh",
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
@@ -119,7 +120,7 @@ const useStyles = makeStyles(
     },
     xtradersContainer: {
       height: "80vh",
-      background: "url(/img/handshake.jpeg), rgba(0,0,0,0.5)",
+      background: "url(/img/handshake.jpeg), rgba(0,0,0,0.6)",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
@@ -130,7 +131,7 @@ const useStyles = makeStyles(
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
-        background: "url(/img/handshake-sm.jpeg),  rgba(0,0,0,0.3)",
+        background: "url(/img/handshake-sm.jpeg),  rgba(0,0,0,0.5)",
         height: "50vh",
         backgroundAttachment: "fixed",
         backgroundSize: "cover",

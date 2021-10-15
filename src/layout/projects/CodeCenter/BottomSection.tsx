@@ -96,7 +96,12 @@ const BottomSection = () => {
               href="https://thecodecenter.org/"
               target="_blank"
               rel="noreferrer noopener"
-              style={{ textDecoration: "none", color: "inherit" }}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                width: "fit-content",
+                display: "inline-block",
+              }}
             >
               <AnimButton variant="contained" endIcon={<ArrowRightAltIcon />}>
                 Explore

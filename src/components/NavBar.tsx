@@ -10,6 +10,7 @@ import {
   Toolbar,
   Avatar,
   Hidden,
+  Divider,
   useMediaQuery,
 } from "@mui/material";
 import clsx from "clsx";
@@ -159,7 +160,15 @@ const NavBar = ({ title, timeline }: IProps) => {
             </Hidden>
           </Box>
 
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              "& hr": {
+                mx: 0.5,
+              },
+            }}
+          >
             <a
               href="https://github.com/stizzle123"
               target="_blank"
@@ -178,16 +187,33 @@ const NavBar = ({ title, timeline }: IProps) => {
                 <LinkedIn sx={{ color: colors.lightGrey }} />
               </IconButton>
             </a>
-
-            <IconButton onClick={() => setOpen(true)}>
-              <Avatar
-                src="/img/idowu.jpg"
-                sx={{
-                  width: 25,
-                  height: 25,
-                }}
-              />
-            </IconButton>
+            <Divider
+              orientation="vertical"
+              variant="middle"
+              flexItem
+              sx={{
+                background: colors.lightGrey,
+              }}
+            />
+            <motion.div
+              style={{
+                width: "fit-content",
+                display: "inline-block",
+              }}
+              whileTap={{
+                scale: 0.8,
+              }}
+            >
+              <IconButton onClick={() => setOpen(true)} size="medium">
+                <Avatar
+                  src="/img/idowu.jpg"
+                  sx={{
+                    width: 32,
+                    height: 32,
+                  }}
+                />
+              </IconButton>
+            </motion.div>
           </Box>
         </Toolbar>
       </AppBar>
