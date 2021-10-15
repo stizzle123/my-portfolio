@@ -1,6 +1,7 @@
 import { useTransform, motion, useViewportScroll } from "framer-motion";
 
 import { NavBar } from "./components";
+import ToggleThemeButton from "./components/ToggleThemeButton";
 import { Header } from "./layout";
 import CodeCenter from "./layout/projects/CodeCenter";
 import Germiny from "./layout/projects/Germiny";
@@ -13,9 +14,18 @@ interface IProps {
   setTitle: any;
   timeline: string;
   setTimeline: any;
+  toggleTheme?: any;
+  type?: any;
 }
 
-const UI: React.FC<IProps> = ({ title, setTitle, timeline, setTimeline }) => {
+const UI: React.FC<IProps> = ({
+  title,
+  setTitle,
+  timeline,
+  setTimeline,
+  toggleTheme,
+  type,
+}) => {
   const { scrollYProgress } = useViewportScroll();
   const width = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
@@ -45,12 +55,13 @@ const UI: React.FC<IProps> = ({ title, setTitle, timeline, setTimeline }) => {
         transition={transition}
       />
       <Header />
-      <NavBar {...{ title, timeline }} />
-      <CodeCenter {...{ setTitle, setTimeline }} />
-      <Xtraders {...{ setTitle, setTimeline }} />
-      <Rsedge {...{ setTitle, setTimeline }} />
-      <Germiny {...{ setTitle, setTimeline }} />
+      <NavBar {...{ title, timeline, type }} />
+      <CodeCenter {...{ setTitle, setTimeline, type }} />
+      <Xtraders {...{ setTitle, setTimeline, type }} />
+      <Rsedge {...{ setTitle, setTimeline, type }} />
+      <Germiny {...{ setTitle, setTimeline, type }} />
       <WorkHistory {...{ setTitle, setTimeline }} />
+      <ToggleThemeButton {...{ toggleTheme, type }} />
     </>
   );
 };

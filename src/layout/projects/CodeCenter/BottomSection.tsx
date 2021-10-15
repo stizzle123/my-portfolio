@@ -9,8 +9,9 @@ import AnimButton from "../../../components/AnimButton";
 import useResponsive from "../../../hooks/useResponsive";
 import { useStyles } from "../../../theme";
 import { colors } from "../../../utilities/colors";
+import { ThemeType } from "../../../types";
 
-const BottomSection = () => {
+const BottomSection = ({ type }: ThemeType) => {
   const classes = useStyles();
   const [matches] = useResponsive();
   const controls = useAnimation();
@@ -48,6 +49,9 @@ const BottomSection = () => {
             alt="codecenter"
             srcSet="/img/codecenter-lg.png 2x"
             className={clsx(classes.imgWrapper, classes.imgAbsolute)}
+            initial={{
+              y: 0,
+            }}
             animate={controls}
             draggable={false}
           />
@@ -61,7 +65,7 @@ const BottomSection = () => {
                 letterSpacing: 2,
                 width: matches ? "100%" : 400,
                 textTransform: "capitalize",
-                color: colors.darkbrown,
+                color: type === "light" ? colors.darkbrown : colors.white,
               }}
               gutterBottom
             >

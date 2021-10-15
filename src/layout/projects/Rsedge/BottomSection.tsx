@@ -1,17 +1,14 @@
-import { useState } from "react";
 import { Typography, Box } from "@mui/material";
 import clsx from "clsx";
 
 import { useStyles } from "../../../theme";
 import useResponsive from "../../../hooks/useResponsive";
-import CustomSwitch from "../../../components/CustomSwitch";
-import CustomTooltip from "../../../components/CustomTooltip";
 import { colors } from "../../../utilities/colors";
+import { ThemeType } from "../../../types";
 
-const BottomSection = () => {
+const BottomSection = ({ type }: ThemeType) => {
   const classes = useStyles();
   const [matches] = useResponsive();
-  const [checked, setChecked] = useState(false);
 
   return (
     <div className={clsx(classes.container)}>
@@ -29,7 +26,7 @@ const BottomSection = () => {
             letterSpacing: 2,
             width: matches ? "100%" : 600,
             margin: "10px auto",
-            color: colors.darkbrown,
+            color: type === "light" ? colors.darkbrown : colors.white,
           }}
           align="center"
           gutterBottom
@@ -48,22 +45,10 @@ const BottomSection = () => {
         </Typography>
       </Box>
       <div style={{ position: "relative" }}>
-        <div
-          style={{ position: "absolute", right: 0, top: matches ? -45 : -50 }}
-        >
-          <CustomTooltip placement="left" arrow title="Toggle theme">
-            <span>
-              <CustomSwitch
-                checked={checked}
-                onChange={(e: any) => setChecked(e.target.checked)}
-              />
-            </span>
-          </CustomTooltip>
-        </div>
         <img
           alt="rsedge"
-          src={checked ? "/img/rsedge-dark.png" : "/img/rsedge.png"}
-          srcSet={checked ? "/img/rsedge-dark.png 2x" : "/img/rsedge.png 2x"}
+          src={"/img/rsedge.png"}
+          srcSet={"/img/rsedge.png 2x"}
           className={clsx(classes.imgWrapper)}
         />
       </div>

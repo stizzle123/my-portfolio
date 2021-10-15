@@ -7,7 +7,7 @@ import { IProps } from "../../../types";
 
 const THRESHOLD = [0, 0.25, 0.5, 0.75, 0.9, 1];
 
-const Xtraders = ({ setTitle, setTimeline }: IProps) => {
+const Xtraders = ({ setTitle, setTimeline, type }: IProps) => {
   const { ref, inView } = useInView({
     threshold: THRESHOLD,
   });
@@ -23,7 +23,7 @@ const Xtraders = ({ setTitle, setTimeline }: IProps) => {
   return (
     <div id="xtraders" ref={ref}>
       <TopSection />
-      <BottomSection />
+      <BottomSection {...{ type }} />
     </div>
   );
 };

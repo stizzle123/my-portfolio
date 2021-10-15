@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Grid, Typography, useTheme } from "@mui/material";
+import { useEffect } from "react";
+import { Grid, Typography } from "@mui/material";
 import clsx from "clsx";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
@@ -9,14 +9,11 @@ import AnimButton from "../../../components/AnimButton";
 import useResponsive from "../../../hooks/useResponsive";
 import { useStyles } from "../../../theme";
 import { colors } from "../../../utilities/colors";
-import CustomSwitch from "../../../components/CustomSwitch";
-import CustomTooltip from "../../../components/CustomTooltip";
+import { ThemeType } from "../../../types";
 
-const BottomSection = () => {
+const BottomSection = ({ type }: ThemeType) => {
   const classes = useStyles();
-  const theme = useTheme();
-  const [checked1, setChecked1] = useState(false);
-  const [checked2, setChecked2] = useState(false);
+
   const [matches] = useResponsive();
   const controls = useAnimation();
   const controls2 = useAnimation();
@@ -44,39 +41,13 @@ const BottomSection = () => {
         >
           <Grid item md={6} sm={12}>
             <div className={classes.imgAbsolute}>
-              <div
-                style={{
-                  position: "absolute",
-                  right: 0,
-                  top: matches ? -10 : 0,
-                  zIndex: 10,
-                }}
-              >
-                <CustomTooltip arrow placement="left" title="Toggle theme">
-                  <span>
-                    <CustomSwitch
-                      checked={checked1}
-                      onChange={(e: any) => setChecked1(e.target.checked)}
-                    />
-                  </span>
-                </CustomTooltip>
-              </div>
               <motion.img
-                src={checked1 ? "/img/xtraders-dark.png" : "/img/xtraders.png"}
+                src={"/img/xtraders.png"}
                 alt="xtraders"
-                srcSet={
-                  checked1
-                    ? "/img/xtraders-dark.png 2x"
-                    : "/img/xtraders.png 2x"
-                }
+                srcSet={"/img/xtraders.png 2x"}
                 className={clsx(classes.imgWrapper)}
                 animate={controls}
                 draggable={false}
-                style={{
-                  borderColor: checked1
-                    ? theme.palette.primary.main
-                    : "#f1f1f1",
-                }}
               />
             </div>
           </Grid>
@@ -89,7 +60,7 @@ const BottomSection = () => {
                   letterSpacing: 2,
                   width: matches ? "100%" : 400,
                   textTransform: "capitalize",
-                  color: colors.darkbrown,
+                  color: type === "light" ? colors.darkbrown : colors.white,
                 }}
                 gutterBottom
               >
@@ -165,41 +136,11 @@ const BottomSection = () => {
             <InView>
               {({ ref, inView }) => (
                 <div style={{ position: "relative" }}>
-                  <div
-                    style={{
-                      position: "absolute",
-                      right: 0,
-                      top: matches ? -45 : -50,
-                      zIndex: 10,
-                    }}
-                  >
-                    <CustomTooltip arrow placement="left" title="Toggle theme">
-                      <span>
-                        <CustomSwitch
-                          checked={checked2}
-                          onChange={(e: any) => setChecked2(e.target.checked)}
-                        />
-                      </span>
-                    </CustomTooltip>
-                  </div>
                   <motion.img
-                    src={
-                      checked2
-                        ? "/img/xtraders-prod-dark.png"
-                        : "/img/xtraders-prod.png"
-                    }
+                    src={"/img/xtraders-prod.png"}
                     alt="xtraders2"
-                    srcSet={
-                      checked2
-                        ? "/img/xtraders-prod-dark.png 2x"
-                        : "/img/xtraders-prod.png 2x"
-                    }
+                    srcSet={"/img/xtraders-prod.png 2x"}
                     className={clsx(classes.imgWrapper)}
-                    style={{
-                      borderColor: checked2
-                        ? theme.palette.primary.main
-                        : "#f1f1f1",
-                    }}
                     initial={{
                       y: -20,
                     }}

@@ -5,7 +5,7 @@ import BottomSection from "./BottomSection";
 import TopSection from "./TopSection";
 import { IProps } from "../../../types";
 
-const CodeCenter = ({ setTitle, setTimeline }: IProps) => {
+const CodeCenter = ({ setTitle, setTimeline, type }: IProps) => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
@@ -21,7 +21,7 @@ const CodeCenter = ({ setTitle, setTimeline }: IProps) => {
   return (
     <div id="codecenter" ref={ref}>
       <TopSection />
-      <BottomSection />
+      <BottomSection {...{ type }} />
     </div>
   );
 };

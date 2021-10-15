@@ -24,9 +24,10 @@ import CustomModal from "./CustomModal";
 interface IProps {
   title: string;
   timeline: string;
+  type?: string;
 }
 
-const NavBar = ({ title, timeline }: IProps) => {
+const NavBar = ({ title, timeline, type }: IProps) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const theme = useTheme();
@@ -60,7 +61,7 @@ const NavBar = ({ title, timeline }: IProps) => {
 
   return (
     <>
-      <CustomModal {...{ open, handleClose }} />
+      <CustomModal {...{ open, handleClose, type }} />
       <AppBar
         className={classes.appBar}
         position="sticky"
@@ -84,6 +85,7 @@ const NavBar = ({ title, timeline }: IProps) => {
               sx={{
                 width: matches ? "100%" : 200,
                 fontSize: matches ? 12 : 14,
+                color: colors.white,
               }}
             >
               {title}{" "}

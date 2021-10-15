@@ -5,7 +5,7 @@ import TopSection from "./TopSection";
 import { IProps } from "../../../types";
 import BottomSection from "./BottomSection";
 
-const Germiny = ({ setTitle, setTimeline }: IProps) => {
+const Germiny = ({ setTitle, setTimeline, type }: IProps) => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
@@ -20,7 +20,7 @@ const Germiny = ({ setTitle, setTimeline }: IProps) => {
   return (
     <div id="germiny" ref={ref}>
       <TopSection />
-      <BottomSection />
+      <BottomSection {...{ type }} />
     </div>
   );
 };

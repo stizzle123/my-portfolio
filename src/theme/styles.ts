@@ -20,7 +20,7 @@ const useStyles = makeStyles(
     },
     headerContainer: {
       height: "90vh",
-      background: theme.palette.primary.main,
+      background: "#151827",
       color: colors.white,
       padding: theme.spacing(5, 1.5),
       [theme.breakpoints.down("sm")]: {
@@ -77,9 +77,15 @@ const useStyles = makeStyles(
     },
     imgWrapper: {
       width: "100%",
-      border: "0.5px solid #f1f1f1",
+      border: `0.5px solid ${
+        theme.palette.mode === "light" ? "#f1f1f1" : theme.palette.primary.main
+      }`,
       borderRadius: 3,
-      boxShadow: "0 0 24px rgba(139, 138, 138, 0.161)",
+      boxShadow: `0 0 24px ${
+        theme.palette.mode === "light"
+          ? "rgba(139, 138, 138, 0.161)"
+          : "rgba(0, 0, 0, 0.161)"
+      }`,
       objectFit: "cover",
       objectPosition: "center",
     },
@@ -179,7 +185,7 @@ const useStyles = makeStyles(
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
-        background: "url(/img/doctor-sm.jpeg),  rgba(0,0,0,0.3)",
+        background: "url(/img/doctor.jpeg),  rgba(0,0,0,0.3)",
         height: "50vh",
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
@@ -189,13 +195,19 @@ const useStyles = makeStyles(
       },
     },
     resumeContainer: {
-      background: theme.palette.primary.main,
+      background: "#151827",
       color: colors.white,
       padding: theme.spacing(3),
 
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
       },
+    },
+    themeBtnAbsolute: {
+      position: "fixed",
+      bottom: 20,
+      right: 20,
+      zIndex: 999999999999999999,
     },
   }),
   { index: 1 }

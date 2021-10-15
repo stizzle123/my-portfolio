@@ -14,10 +14,11 @@ import AnimButton from "./AnimButton";
 
 interface Props {
   open: boolean;
+  type?: string;
   handleClose: () => void | SetStateAction<boolean>;
 }
 
-const CustomModal = ({ open, handleClose }: Props) => {
+const CustomModal = ({ open, handleClose, type }: Props) => {
   const theme = useTheme();
   return (
     <>
@@ -29,6 +30,9 @@ const CustomModal = ({ open, handleClose }: Props) => {
             fullWidth
             PaperProps={{
               square: true,
+              sx: {
+                background: type === "light" ? "#fff" : "#151827",
+              },
             }}
             style={{
               overflow: "unset",

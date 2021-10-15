@@ -9,8 +9,9 @@ import AnimButton from "../../../components/AnimButton";
 import useResponsive from "../../../hooks/useResponsive";
 import { useStyles } from "../../../theme";
 import { colors } from "../../../utilities/colors";
+import { ThemeType } from "../../../types";
 
-const BottomSection = () => {
+const BottomSection = ({ type }: ThemeType) => {
   const classes = useStyles();
   const [matches] = useResponsive();
   const controls = useAnimation();
@@ -44,12 +45,13 @@ const BottomSection = () => {
       >
         <Grid item md={6} sm={12}>
           <motion.img
-            src="/img/germiny-sm.png"
+            src={`/img/germiny-sm.png`}
             alt="germiny home"
             srcSet="/img/germiny.png 2x"
             className={clsx(classes.imgWrapper, classes.imgAbsolute)}
             animate={controls}
             draggable={false}
+            loading="lazy"
             style={{
               borderWidth: 0,
             }}
@@ -64,7 +66,7 @@ const BottomSection = () => {
                 letterSpacing: 2,
                 width: matches ? "100%" : 400,
                 textTransform: "capitalize",
-                color: colors.darkbrown,
+                color: type === "light" ? colors.darkbrown : colors.white,
               }}
               gutterBottom
             >
@@ -127,6 +129,7 @@ const BottomSection = () => {
                     }
                     ref={ref}
                     draggable={false}
+                    loading="lazy"
                   />
                 )}
               </InView>
@@ -148,7 +151,7 @@ const BottomSection = () => {
               letterSpacing: 2,
               width: matches ? "100%" : 400,
               textTransform: "capitalize",
-              color: colors.darkbrown,
+              color: type === "light" ? colors.darkbrown : colors.white,
               margin: "10px auto",
             }}
             gutterBottom
@@ -174,6 +177,7 @@ const BottomSection = () => {
             srcSet="/img/germiny-about.png 2x"
             alt="Germiny about UI"
             className={clsx(classes.imgWrapper)}
+            loading="lazy"
           />
         </Grid>
       </Grid>
