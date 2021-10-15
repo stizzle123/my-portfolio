@@ -206,7 +206,7 @@ const NavBar = ({ title, timeline }: IProps) => {
             >
               <IconButton onClick={() => setOpen(true)} size="medium">
                 <Avatar
-                  src="/img/idowu.jpg"
+                  src="/img/idowu.jpeg"
                   sx={{
                     width: 32,
                     height: 32,

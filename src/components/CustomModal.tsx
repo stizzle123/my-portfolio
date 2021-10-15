@@ -54,7 +54,7 @@ const CustomModal = ({ open, handleClose }: Props) => {
             <Grid container>
               <Grid item xs={12} md={6}>
                 <motion.img
-                  src="/img/idowu.jpg"
+                  src="/img/idowu.jpeg"
                   alt="Arifayan Idowu"
                   style={{
                     width: "100%",
