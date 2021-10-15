@@ -6,6 +6,10 @@ const useStyles = makeStyles(
   (theme: Theme) => ({
     appBar: {
       color: "inherit",
+      height: "10vh",
+      [theme.breakpoints.down("sm")]: {
+        height: "100%",
+      },
     },
     container: {
       position: "relative",
