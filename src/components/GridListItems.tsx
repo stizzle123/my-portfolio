@@ -2,6 +2,7 @@ import { Divider, Grid, Typography, useTheme } from "@mui/material";
 
 import { useStyles } from "../theme";
 import { ItemProps } from "../types";
+import ScrollRevealContainer from "./ScrollRevealContainer";
 
 interface Props extends ItemProps {
   items: any[];
@@ -20,7 +21,7 @@ const GridListItems = ({
   const classes = useStyles();
 
   return (
-    <>
+    <ScrollRevealContainer>
       <Grid
         container
         sx={{
@@ -67,7 +68,7 @@ const GridListItems = ({
           }}
         />
       )}
-    </>
+    </ScrollRevealContainer>
   );
 };
 

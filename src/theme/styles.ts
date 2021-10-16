@@ -107,7 +107,7 @@ const useStyles = makeStyles(
     },
 
     codecenterContainer: {
-      background: "url(/img/code-lg.jpeg), rgba(0,0,0,0.5)",
+      background: "url(/img/coding.jpeg), rgba(0,0,0,0.5)",
       height: "80vh",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
@@ -119,13 +119,7 @@ const useStyles = makeStyles(
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
-        background: "url(/img/code-sm.jpeg,  rgba(0,0,0,0.5))",
         height: "50vh",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundBlendMode: "overlay",
       },
     },
     xtradersContainer: {
@@ -152,7 +146,7 @@ const useStyles = makeStyles(
     },
     rsedgeContainer: {
       height: "80vh",
-      background: "url(/img/planning.jpeg), rgba(0,0,0,0.2)",
+      background: "url(/img/chart.jpeg), rgba(0,0,0,0.2)",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
@@ -163,13 +157,7 @@ const useStyles = makeStyles(
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
-        background: "url(/img/planning-sm.jpeg),  rgba(0,0,0,0.3)",
         height: "50vh",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundBlendMode: "overlay",
       },
     },
     germinyContainer: {

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Typography } from "@mui/material";
 import clsx from "clsx";
 import {
@@ -6,38 +5,18 @@ import {
   motion,
   useViewportScroll,
   useTransform,
-  useAnimation,
 } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 import { useStyles } from "../../../theme";
 import useRefScrollProgress from "../../../hooks/useRefScrollProgress";
 import useResponsive from "../../../hooks/useResponsive";
 import Overlay from "../../../components/Overlay";
+import ScrollRevealContainer from "../../../components/ScrollRevealContainer";
 
 const TopSection = () => {
   const classes = useStyles();
   const { ref, start, end } = useRefScrollProgress();
   const [matches] = useResponsive();
-  const controls = useAnimation();
-  const { inView, ref: refObj } = useInView({
-    threshold: 0.5,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start((i) => ({
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "spring",
-          stiffness: 300,
-          damping: 100,
-          delay: i * 0.3,
-        },
-      }));
-    }
-  }, [inView, controls]);
 
   const { scrollYProgress } = useViewportScroll();
 
@@ -51,7 +30,7 @@ const TopSection = () => {
   return (
     <AnimatePresence>
       <div ref={ref}>
-        <motion.div className={clsx(classes.xtradersContainer)} ref={refObj}>
+        <motion.div className={clsx(classes.xtradersContainer)}>
           <Overlay {...{ opacity }} />
           <div
             style={{
@@ -60,11 +39,7 @@ const TopSection = () => {
               top: "20%",
             }}
           >
-            <motion.div
-              custom={0}
-              initial={{ y: 20, opacity: 0 }}
-              animate={controls}
-            >
+            <ScrollRevealContainer>
               <Typography
                 variant={matches ? "h3" : "h2"}
                 sx={{
@@ -75,12 +50,8 @@ const TopSection = () => {
               >
                 XTraders
               </Typography>
-            </motion.div>
-            <motion.div
-              custom={1}
-              initial={{ y: 20, opacity: 0 }}
-              animate={controls}
-            >
+            </ScrollRevealContainer>
+            <ScrollRevealContainer>
               <Typography
                 className={classes.lightPurpleText}
                 sx={{ width: matches ? "100%" : 600 }}
@@ -90,7 +61,7 @@ const TopSection = () => {
                 within your geolocation. Products can be commented on by users,
                 and also traded with interested parties.
               </Typography>
-            </motion.div>
+            </ScrollRevealContainer>
           </div>
         </motion.div>
       </div>

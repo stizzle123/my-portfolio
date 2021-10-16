@@ -1,7 +1,4 @@
-import { useEffect } from "react";
 import { Typography } from "@mui/material";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 import { GridListItems } from "../../../components";
 import { ItemProps } from "../../../types";
@@ -44,45 +41,19 @@ const jobs: ItemProps[] = [
 ];
 
 const BottomSection = () => {
-  const controls = useAnimation();
-  const { inView, ref } = useInView({
-    threshold: 0.5,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start((index) => ({
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "spring",
-          stiffness: 300,
-          damping: 100,
-          delay: index * 0.3,
-        },
-      }));
-    }
-  }, [inView, controls]);
-
   return (
-    <div ref={ref}>
+    <div>
       <Typography gutterBottom>Job History</Typography>
       {jobs.map((item, index) => (
-        <motion.div
+        <GridListItems
           key={index}
-          custom={index}
-          initial={{ y: 20, opacity: 0 }}
-          animate={controls}
-        >
-          <GridListItems
-            date={item.date}
-            company={item.company}
-            jobTitle={item.jobTitle}
-            description={item.description}
-            items={jobs}
-            index={index}
-          />
-        </motion.div>
+          date={item.date}
+          company={item.company}
+          jobTitle={item.jobTitle}
+          description={item.description}
+          items={jobs}
+          index={index}
+        />
       ))}
     </div>
   );

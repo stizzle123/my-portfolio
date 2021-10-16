@@ -3,6 +3,7 @@ import clsx from "clsx";
 
 import { useStyles } from "../../../theme";
 import useResponsive from "../../../hooks/useResponsive";
+import ScrollRevealContainer from "../../../components/ScrollRevealContainer";
 
 const BottomSection = () => {
   const classes = useStyles();
@@ -12,7 +13,7 @@ const BottomSection = () => {
     <div
       className={clsx(classes.container)}
       style={{
-        paddingBottom: matches ? 0 : 200,
+        paddingBottom: matches ? 100 : 200,
       }}
     >
       <Box
@@ -22,39 +23,45 @@ const BottomSection = () => {
           marginBottom: matches ? 5 : 10,
         }}
       >
-        <Typography
-          variant={matches ? "h3" : "h2"}
-          sx={{
-            fontWeight: 600,
-            letterSpacing: 2,
-            width: matches ? "100%" : 600,
-            margin: "10px auto",
-          }}
-          align="center"
-          gutterBottom
-        >
-          Creating simplicity out of complexity
-        </Typography>
-        <Typography
-          className={classes.lightPurpleText}
-          sx={{ width: matches ? "100%" : 600, margin: "auto" }}
-        >
-          Enterprise resource planning applications are complex systems that
-          requires a good understanding of a system as such before using one.
-          RSEDGE was able to bridge that gap, removing all the complexities that
-          comes with a system of its kind, easy-to-use, coupled with a user
-          friendly UI, makes this application one of a kind.
-        </Typography>
+        <ScrollRevealContainer>
+          <Typography
+            variant={matches ? "h3" : "h2"}
+            sx={{
+              fontWeight: 600,
+              letterSpacing: 2,
+              width: matches ? "100%" : 600,
+              margin: "10px auto",
+            }}
+            align="center"
+            gutterBottom
+          >
+            Creating simplicity out of complexity
+          </Typography>
+        </ScrollRevealContainer>
+        <ScrollRevealContainer>
+          <Typography
+            className={classes.lightPurpleText}
+            sx={{ width: matches ? "100%" : 600, margin: "auto" }}
+          >
+            Enterprise resource planning applications are complex systems that
+            requires a good understanding of a system as such before using one.
+            RSEDGE was able to bridge that gap, removing all the complexities
+            that comes with a system of its kind, easy-to-use, coupled with a
+            user friendly UI, makes this application one of a kind.
+          </Typography>
+        </ScrollRevealContainer>
       </Box>
       <div style={{ position: "relative" }}>
-        <img
-          alt="rsedge"
-          src={"/img/rsedge.png"}
-          srcSet={"/img/rsedge.png 2x"}
-          className={clsx(classes.imgWrapper)}
-          loading="lazy"
-          draggable={false}
-        />
+        <ScrollRevealContainer>
+          <img
+            alt="rsedge"
+            src={"/img/rsedge.png"}
+            srcSet={"/img/rsedge.png 2x"}
+            className={clsx(classes.imgWrapper)}
+            loading="lazy"
+            draggable={false}
+          />
+        </ScrollRevealContainer>
       </div>
     </div>
   );

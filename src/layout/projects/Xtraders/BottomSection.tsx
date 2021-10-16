@@ -9,13 +9,13 @@ import AnimButton from "../../../components/AnimButton";
 import useResponsive from "../../../hooks/useResponsive";
 import { useStyles } from "../../../theme";
 import { colors } from "../../../utilities/colors";
+import ScrollRevealContainer from "../../../components/ScrollRevealContainer";
 
 const BottomSection = () => {
   const classes = useStyles();
 
   const [matches] = useResponsive();
   const controls = useAnimation();
-  const controls2 = useAnimation();
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -27,19 +27,8 @@ const BottomSection = () => {
         y: -20,
         transition: { duration: 3, stiffness: 100, damping: 10 },
       });
-      controls2.start((i) => ({
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "spring",
-          stiffness: 300,
-          damping: 100,
-          delay: i * 0.3,
-          duration: 2,
-        },
-      }));
     }
-  }, [controls, inView, controls2]);
+  }, [controls, inView]);
 
   return (
     <AnimatePresence>
@@ -47,7 +36,7 @@ const BottomSection = () => {
         className={clsx(classes.container)}
         ref={ref}
         style={{
-          paddingBottom: matches ? 0 : 200,
+          paddingBottom: matches ? 100 : 200,
         }}
       >
         <Grid
@@ -70,11 +59,7 @@ const BottomSection = () => {
           </Grid>
           <Grid item md={6} sm={12}>
             <div className={classes.mt60}>
-              <motion.div
-                custom={0}
-                animate={controls2}
-                initial={{ y: 20, opacity: 0 }}
-              >
+              <ScrollRevealContainer>
                 <Typography
                   variant={matches ? "h3" : "h2"}
                   sx={{
@@ -87,12 +72,8 @@ const BottomSection = () => {
                 >
                   Product management like never before
                 </Typography>
-              </motion.div>
-              <motion.div
-                custom={1}
-                animate={controls2}
-                initial={{ y: 20, opacity: 0 }}
-              >
+              </ScrollRevealContainer>
+              <ScrollRevealContainer>
                 <Typography
                   gutterBottom
                   sx={{
@@ -104,12 +85,8 @@ const BottomSection = () => {
                   but in likeness to the original project which can't be
                   displayed here for legal reasons.
                 </Typography>
-              </motion.div>
-              <motion.div
-                custom={2}
-                animate={controls2}
-                initial={{ y: 20, opacity: 0 }}
-              >
+              </ScrollRevealContainer>
+              <ScrollRevealContainer>
                 <Typography
                   gutterBottom
                   sx={{
@@ -123,12 +100,8 @@ const BottomSection = () => {
                 >
                   To check out the demo app
                 </Typography>
-              </motion.div>
-              <motion.div
-                custom={3}
-                animate={controls2}
-                initial={{ y: 20, opacity: 0 }}
-              >
+              </ScrollRevealContainer>
+              <ScrollRevealContainer>
                 <a
                   href="https://xtraders.herokuapp.com/"
                   target="_blank"
@@ -147,18 +120,14 @@ const BottomSection = () => {
                     Explore
                   </AnimButton>
                 </a>
-              </motion.div>
+              </ScrollRevealContainer>
             </div>
           </Grid>
         </Grid>
         <Grid container spacing={5} style={{ marginTop: matches ? 20 : 100 }}>
           <Grid item xs={12} md={6}>
             <div>
-              <motion.div
-                custom={4}
-                animate={controls2}
-                initial={{ y: 20, opacity: 0 }}
-              >
+              <ScrollRevealContainer>
                 <Typography
                   variant={matches ? "h3" : "h2"}
                   sx={{
@@ -171,12 +140,8 @@ const BottomSection = () => {
                 >
                   Accessibility has never been so easy
                 </Typography>
-              </motion.div>
-              <motion.div
-                custom={5}
-                animate={controls2}
-                initial={{ y: 20, opacity: 0 }}
-              >
+              </ScrollRevealContainer>
+              <ScrollRevealContainer>
                 <Typography
                   gutterBottom
                   sx={{
@@ -189,7 +154,7 @@ const BottomSection = () => {
                   page leverages geolocation by default, using a 200 metre
                   radius from your current position.
                 </Typography>
-              </motion.div>
+              </ScrollRevealContainer>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>

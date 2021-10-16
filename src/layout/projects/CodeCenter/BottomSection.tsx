@@ -10,12 +10,12 @@ import AnimButton from "../../../components/AnimButton";
 import useResponsive from "../../../hooks/useResponsive";
 import { useStyles } from "../../../theme";
 import { colors } from "../../../utilities/colors";
+import ScrollRevealContainer from "../../../components/ScrollRevealContainer";
 
 const BottomSection = () => {
   const classes = useStyles();
   const [matches] = useResponsive();
   const controls = useAnimation();
-  const controls2 = useAnimation();
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -27,25 +27,14 @@ const BottomSection = () => {
         y: -20,
         transition: { duration: 3, stiffness: 100, damping: 10 },
       });
-      controls2.start((i) => ({
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "spring",
-          stiffness: 300,
-          damping: 100,
-          delay: i * 0.3,
-          duration: 2,
-        },
-      }));
     }
-  }, [controls, inView, controls2]);
+  }, [controls, inView]);
 
   return (
     <div
       className={clsx(classes.container)}
       style={{
-        paddingBottom: matches ? 0 : 250,
+        paddingBottom: matches ? 100 : 250,
       }}
       ref={ref}
     >
@@ -88,11 +77,7 @@ const BottomSection = () => {
         </Grid>
         <Grid item md={6} sm={12}>
           <div className={classes.mt60}>
-            <motion.div
-              custom={0}
-              animate={controls2}
-              initial={{ y: 20, opacity: 0 }}
-            >
+            <ScrollRevealContainer>
               <Typography
                 variant={matches ? "h3" : "h2"}
                 sx={{
@@ -105,12 +90,8 @@ const BottomSection = () => {
               >
                 The Bootcamp for everyone.
               </Typography>
-            </motion.div>
-            <motion.div
-              custom={1}
-              animate={controls2}
-              initial={{ y: 20, opacity: 0 }}
-            >
+            </ScrollRevealContainer>
+            <ScrollRevealContainer>
               <Typography
                 gutterBottom
                 sx={{
@@ -123,12 +104,8 @@ const BottomSection = () => {
                 settled for something simple and direct. PHP was used as the
                 backend technology.
               </Typography>
-            </motion.div>
-            <motion.div
-              custom={2}
-              animate={controls2}
-              initial={{ y: 20, opacity: 0 }}
-            >
+            </ScrollRevealContainer>
+            <ScrollRevealContainer>
               <Typography
                 gutterBottom
                 sx={{
@@ -142,26 +119,24 @@ const BottomSection = () => {
               >
                 To learn more about The Code Center
               </Typography>
-            </motion.div>
-
-            <motion.a
-              href="https://thecodecenter.org/"
-              target="_blank"
-              rel="noreferrer noopener"
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                width: "fit-content",
-                display: "inline-block",
-              }}
-              custom={3}
-              animate={controls2}
-              initial={{ y: 20, opacity: 0 }}
-            >
-              <AnimButton variant="contained" endIcon={<ArrowRightAltIcon />}>
-                Explore
-              </AnimButton>
-            </motion.a>
+            </ScrollRevealContainer>
+            <ScrollRevealContainer>
+              <a
+                href="https://thecodecenter.org/"
+                target="_blank"
+                rel="noreferrer noopener"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  width: "fit-content",
+                  display: "inline-block",
+                }}
+              >
+                <AnimButton variant="contained" endIcon={<ArrowRightAltIcon />}>
+                  Explore
+                </AnimButton>
+              </a>
+            </ScrollRevealContainer>
             <Hidden smDown>
               <InView>
                 {({ ref, inView }) => (

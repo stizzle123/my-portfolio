@@ -72,7 +72,7 @@ const NavBar = ({ type }: IProps) => {
           background: theme.palette.primary.dark,
         }}
       >
-        <Toolbar>
+        <Toolbar id="#back-to-top-anchor">
           <motion.div
             variants={variants}
             initial="hidden"
