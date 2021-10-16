@@ -1,6 +1,4 @@
 export interface IProps {
-  setTitle: any;
-  setTimeline: any;
   type?: string;
 }
 
@@ -9,8 +7,4 @@ export interface ItemProps {
   company?: string;
   jobTitle?: string;
   description?: string;
-}
-
-export interface ThemeType {
-  type?: string;
 }

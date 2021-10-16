@@ -16,22 +16,23 @@ import {
 import clsx from "clsx";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 import { useStyles } from "../theme";
 import { colors } from "../utilities/colors";
 import CustomModal from "./CustomModal";
 
 interface IProps {
-  title: string;
-  timeline: string;
   type?: string;
 }
 
-const NavBar = ({ title, timeline, type }: IProps) => {
+const NavBar = ({ type }: IProps) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
+  //@ts-ignore
+  const { title, timeline } = useSelector((state) => state.title);
 
   const transition = {
     type: "spring",
@@ -208,7 +209,7 @@ const NavBar = ({ title, timeline, type }: IProps) => {
             >
               <IconButton onClick={() => setOpen(true)} size="medium">
                 <Avatar
-                  src="/img/idowu.jpeg"
+                  src="/img/idowu-sm.jpeg"
                   sx={{
                     width: 32,
                     height: 32,

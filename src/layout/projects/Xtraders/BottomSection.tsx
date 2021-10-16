@@ -9,9 +9,8 @@ import AnimButton from "../../../components/AnimButton";
 import useResponsive from "../../../hooks/useResponsive";
 import { useStyles } from "../../../theme";
 import { colors } from "../../../utilities/colors";
-import { ThemeType } from "../../../types";
 
-const BottomSection = ({ type }: ThemeType) => {
+const BottomSection = () => {
   const classes = useStyles();
 
   const [matches] = useResponsive();
@@ -42,12 +41,13 @@ const BottomSection = ({ type }: ThemeType) => {
           <Grid item md={6} sm={12}>
             <div className={classes.imgAbsolute}>
               <motion.img
-                src={"/img/xtraders.png"}
+                src={`/img/xtraders.png`}
                 alt="xtraders"
-                srcSet={"/img/xtraders.png 2x"}
+                srcSet={`/img/xtraders.png`}
                 className={clsx(classes.imgWrapper)}
                 animate={controls}
                 draggable={false}
+                loading="lazy"
               />
             </div>
           </Grid>
@@ -60,7 +60,6 @@ const BottomSection = ({ type }: ThemeType) => {
                   letterSpacing: 2,
                   width: matches ? "100%" : 400,
                   textTransform: "capitalize",
-                  color: type === "light" ? colors.darkbrown : colors.white,
                 }}
                 gutterBottom
               >
@@ -137,9 +136,9 @@ const BottomSection = ({ type }: ThemeType) => {
               {({ ref, inView }) => (
                 <div style={{ position: "relative" }}>
                   <motion.img
-                    src={"/img/xtraders-prod.png"}
+                    src={`/img/xtraders-prod.png`}
                     alt="xtraders2"
-                    srcSet={"/img/xtraders-prod.png 2x"}
+                    srcSet={`/img/xtraders-prod.png 2x`}
                     className={clsx(classes.imgWrapper)}
                     initial={{
                       y: -20,
@@ -156,6 +155,7 @@ const BottomSection = ({ type }: ThemeType) => {
                     }
                     ref={ref}
                     draggable={false}
+                    loading="lazy"
                   />
                 </div>
               )}

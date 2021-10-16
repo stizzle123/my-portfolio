@@ -1,26 +1,31 @@
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { useDispatch } from "react-redux";
 
 import TopSection from "./TopSection";
-import { IProps } from "../../../types";
 import BottomSection from "./BottomSection";
+import {
+  setTimelineAsync,
+  setTitleAsync,
+} from "../../../features/title/titleSlice";
 
-const Germiny = ({ setTitle, setTimeline, type }: IProps) => {
+const Germiny = () => {
+  const dispatch = useDispatch();
   const { ref, inView } = useInView({
     threshold: 0,
   });
 
   useEffect(() => {
     if (inView) {
-      setTitle("Frontend Developer");
-      setTimeline("2021 (Contract)");
+      dispatch(setTitleAsync("Frontend Developer"));
+      dispatch(setTimelineAsync("2021 (Contract)"));
     }
-  }, [setTitle, inView, setTimeline]);
+  }, [dispatch, inView]);
 
   return (
     <div id="germiny" ref={ref}>
       <TopSection />
-      <BottomSection {...{ type }} />
+      <BottomSection />
     </div>
   );
 };

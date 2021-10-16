@@ -1,11 +1,16 @@
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { useDispatch } from "react-redux";
 
 import BottomSection from "./BottomSection";
 import TopSection from "./TopSection";
-import { IProps } from "../../../types";
+import {
+  setTimelineAsync,
+  setTitleAsync,
+} from "../../../features/title/titleSlice";
 
-const CodeCenter = ({ setTitle, setTimeline, type }: IProps) => {
+const CodeCenter = () => {
+  const dispatch = useDispatch();
   const { ref, inView } = useInView({
     threshold: 0,
   });
@@ -13,15 +18,15 @@ const CodeCenter = ({ setTitle, setTimeline, type }: IProps) => {
   useEffect(() => {
     //@ts-ignore
     if (inView) {
-      setTitle("Instructor");
-      setTimeline("2017 - 2019");
+      dispatch(setTitleAsync("Instructor"));
+      dispatch(setTimelineAsync("2017 - 2019"));
     }
-  }, [setTitle, inView, setTimeline]);
+  }, [dispatch, inView]);
 
   return (
     <div id="codecenter" ref={ref}>
       <TopSection />
-      <BottomSection {...{ type }} />
+      <BottomSection />
     </div>
   );
 };

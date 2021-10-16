@@ -9,9 +9,8 @@ import AnimButton from "../../../components/AnimButton";
 import useResponsive from "../../../hooks/useResponsive";
 import { useStyles } from "../../../theme";
 import { colors } from "../../../utilities/colors";
-import { ThemeType } from "../../../types";
 
-const BottomSection = ({ type }: ThemeType) => {
+const BottomSection = () => {
   const classes = useStyles();
   const [matches] = useResponsive();
   const controls = useAnimation();
@@ -45,7 +44,7 @@ const BottomSection = ({ type }: ThemeType) => {
       >
         <Grid item md={6} sm={12}>
           <motion.img
-            src={`/img/germiny-sm.png`}
+            src={`/img/germiny-min.png`}
             alt="germiny home"
             srcSet="/img/germiny.png 2x"
             className={clsx(classes.imgWrapper, classes.imgAbsolute)}
@@ -66,7 +65,6 @@ const BottomSection = ({ type }: ThemeType) => {
                 letterSpacing: 2,
                 width: matches ? "100%" : 400,
                 textTransform: "capitalize",
-                color: type === "light" ? colors.darkbrown : colors.white,
               }}
               gutterBottom
             >
@@ -109,9 +107,9 @@ const BottomSection = ({ type }: ThemeType) => {
               <InView>
                 {({ ref, inView }) => (
                   <motion.img
-                    src="/img/germiny-product-sm.png"
+                    src="/img/germiny-product-min.png"
                     alt="germiny product"
-                    srcSet="/img/germiny-product.png 2x"
+                    srcSet="/img/germiny-product-min.png 2x"
                     className={clsx(classes.imgWrapper)}
                     style={{ marginTop: 100 }}
                     initial={{
@@ -151,7 +149,6 @@ const BottomSection = ({ type }: ThemeType) => {
               letterSpacing: 2,
               width: matches ? "100%" : 400,
               textTransform: "capitalize",
-              color: type === "light" ? colors.darkbrown : colors.white,
               margin: "10px auto",
             }}
             gutterBottom

@@ -1,17 +1,17 @@
 import { useEffect } from "react";
-import { Grid, Hidden, Typography } from "@mui/material";
+import { Grid, Hidden, Typography, Skeleton } from "@mui/material";
 import clsx from "clsx";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { motion, useAnimation } from "framer-motion";
 import { useInView, InView } from "react-intersection-observer";
+import ProgressiveImage from "react-progressive-graceful-image";
 
 import AnimButton from "../../../components/AnimButton";
 import useResponsive from "../../../hooks/useResponsive";
 import { useStyles } from "../../../theme";
 import { colors } from "../../../utilities/colors";
-import { ThemeType } from "../../../types";
 
-const BottomSection = ({ type }: ThemeType) => {
+const BottomSection = () => {
   const classes = useStyles();
   const [matches] = useResponsive();
   const controls = useAnimation();
@@ -44,17 +44,36 @@ const BottomSection = ({ type }: ThemeType) => {
         spacing={5}
       >
         <Grid item md={6} sm={12}>
-          <motion.img
-            src="/img/codecenter-sm.png"
-            alt="codecenter"
-            srcSet="/img/codecenter-lg.png 2x"
-            className={clsx(classes.imgWrapper, classes.imgAbsolute)}
-            initial={{
-              y: 0,
+          <ProgressiveImage
+            src={`/img/codecenter-lg-min.png`}
+            placeholder={`/img/codecenter-sm.png`}
+            srcSetData={{
+              srcSet:
+                "/img/codecenter-sm.png 1x, /img/codecenter-lg-min.png 2x",
+              sizes: "(max-width: 600px) 1x, 2x",
             }}
-            animate={controls}
-            draggable={false}
-          />
+          >
+            {(src: any, loading: boolean) =>
+              loading ? (
+                <Skeleton
+                  sx={{ height: 600, background: "#ccc" }}
+                  className={clsx(classes.imgWrapper, classes.imgAbsolute)}
+                />
+              ) : (
+                <motion.img
+                  src={src}
+                  alt="codecenter"
+                  className={clsx(classes.imgWrapper, classes.imgAbsolute)}
+                  initial={{
+                    y: 0,
+                  }}
+                  animate={controls}
+                  draggable={false}
+                  loading="lazy"
+                />
+              )
+            }
+          </ProgressiveImage>
         </Grid>
         <Grid item md={6} sm={12}>
           <div className={classes.mt60}>
@@ -65,7 +84,6 @@ const BottomSection = ({ type }: ThemeType) => {
                 letterSpacing: 2,
                 width: matches ? "100%" : 400,
                 textTransform: "capitalize",
-                color: type === "light" ? colors.darkbrown : colors.white,
               }}
               gutterBottom
             >
@@ -115,9 +133,9 @@ const BottomSection = ({ type }: ThemeType) => {
               <InView>
                 {({ ref, inView }) => (
                   <motion.img
-                    src="/img/codecenter-lg-2.png"
+                    src={`/img/codecenter-lg-2.png`}
                     alt="codecenter2"
-                    srcSet="/img/codecenter-lg-2.png 2x"
+                    srcSet={`/img/codecenter-lg-2.png 2x`}
                     className={clsx(classes.imgWrapper)}
                     style={{ marginTop: 100 }}
                     initial={{
@@ -135,6 +153,7 @@ const BottomSection = ({ type }: ThemeType) => {
                     }
                     ref={ref}
                     draggable={false}
+                    loading="lazy"
                   />
                 )}
               </InView>

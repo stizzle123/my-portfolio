@@ -10,22 +10,11 @@ import WorkHistory from "./layout/projects/WorkHistory";
 import Xtraders from "./layout/projects/Xtraders";
 
 interface IProps {
-  title: string;
-  setTitle: any;
-  timeline: string;
-  setTimeline: any;
   toggleTheme?: any;
   type?: any;
 }
 
-const UI: React.FC<IProps> = ({
-  title,
-  setTitle,
-  timeline,
-  setTimeline,
-  toggleTheme,
-  type,
-}) => {
+const UI: React.FC<IProps> = ({ toggleTheme, type }) => {
   const { scrollYProgress } = useViewportScroll();
   const width = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
@@ -55,12 +44,12 @@ const UI: React.FC<IProps> = ({
         transition={transition}
       />
       <Header />
-      <NavBar {...{ title, timeline, type }} />
-      <CodeCenter {...{ setTitle, setTimeline, type }} />
-      <Xtraders {...{ setTitle, setTimeline, type }} />
-      <Rsedge {...{ setTitle, setTimeline, type }} />
-      <Germiny {...{ setTitle, setTimeline, type }} />
-      <WorkHistory {...{ setTitle, setTimeline }} />
+      <NavBar {...{ type }} />
+      <CodeCenter />
+      <Xtraders />
+      <Rsedge />
+      <Germiny />
+      <WorkHistory />
       <ToggleThemeButton {...{ toggleTheme, type }} />
     </>
   );

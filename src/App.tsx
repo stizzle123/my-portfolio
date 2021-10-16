@@ -6,12 +6,11 @@ import {
   ThemeOptions,
   PaletteMode,
 } from "@mui/material";
+
 import { theme } from "./theme";
 import UI from "./UI";
 
 function App() {
-  const [title, setTitle] = useState("");
-  const [timeline, setTimeline] = useState("");
   const [theming, setTheme] = useState<ThemeOptions>(theme);
   let type = localStorage.getItem("theme:mode");
 
@@ -44,9 +43,7 @@ function App() {
     <AnimateSharedLayout type="crossfade">
       <ThemeProvider theme={theming}>
         <CssBaseline />
-        <UI
-          {...{ title, setTitle, timeline, setTimeline, toggleTheme, type }}
-        />
+        <UI {...{ toggleTheme, type }} />
       </ThemeProvider>
     </AnimateSharedLayout>
   );

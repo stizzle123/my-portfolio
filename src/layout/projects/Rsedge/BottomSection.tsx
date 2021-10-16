@@ -3,10 +3,8 @@ import clsx from "clsx";
 
 import { useStyles } from "../../../theme";
 import useResponsive from "../../../hooks/useResponsive";
-import { colors } from "../../../utilities/colors";
-import { ThemeType } from "../../../types";
 
-const BottomSection = ({ type }: ThemeType) => {
+const BottomSection = () => {
   const classes = useStyles();
   const [matches] = useResponsive();
 
@@ -26,7 +24,6 @@ const BottomSection = ({ type }: ThemeType) => {
             letterSpacing: 2,
             width: matches ? "100%" : 600,
             margin: "10px auto",
-            color: type === "light" ? colors.darkbrown : colors.white,
           }}
           align="center"
           gutterBottom
@@ -50,6 +47,8 @@ const BottomSection = ({ type }: ThemeType) => {
           src={"/img/rsedge.png"}
           srcSet={"/img/rsedge.png 2x"}
           className={clsx(classes.imgWrapper)}
+          loading="lazy"
+          draggable={false}
         />
       </div>
     </div>

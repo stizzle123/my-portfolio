@@ -1,13 +1,18 @@
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { useDispatch } from "react-redux";
 
 import BottomSection from "./BottomSection";
 import TopSection from "./TopSection";
-import { IProps } from "../../../types";
+import {
+  setTimelineAsync,
+  setTitleAsync,
+} from "../../../features/title/titleSlice";
 
 const THRESHOLD = [0, 0.25, 0.5, 0.75, 0.9, 1];
 
-const Xtraders = ({ setTitle, setTimeline, type }: IProps) => {
+const Xtraders = () => {
+  const dispatch = useDispatch();
   const { ref, inView } = useInView({
     threshold: THRESHOLD,
   });
@@ -15,15 +20,15 @@ const Xtraders = ({ setTitle, setTimeline, type }: IProps) => {
   useEffect(() => {
     //@ts-ignore
     if (inView) {
-      setTitle("Freelance");
-      setTimeline("2020 (Contract)");
+      dispatch(setTitleAsync("Freelance"));
+      dispatch(setTimelineAsync("2020 (Contract)"));
     }
-  }, [setTitle, inView, setTimeline]);
+  }, [dispatch, inView]);
 
   return (
     <div id="xtraders" ref={ref}>
       <TopSection />
-      <BottomSection {...{ type }} />
+      <BottomSection />
     </div>
   );
 };
