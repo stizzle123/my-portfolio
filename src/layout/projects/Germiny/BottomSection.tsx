@@ -26,6 +26,17 @@ const BottomSection = () => {
         y: -20,
         transition: { duration: 3, stiffness: 100, damping: 10 },
       });
+      controls2.start((i) => ({
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "spring",
+          stiffness: 300,
+          damping: 100,
+          delay: i * 0.3,
+          duration: 2,
+        },
+      }));
     }
   }, [controls, inView, controls2]);
 
@@ -58,51 +69,72 @@ const BottomSection = () => {
         </Grid>
         <Grid item md={6} sm={12}>
           <div className={classes.mt60}>
-            <Typography
-              variant={matches ? "h3" : "h2"}
-              sx={{
-                fontWeight: 800,
-                letterSpacing: 2,
-                width: matches ? "100%" : 400,
-                textTransform: "capitalize",
-              }}
-              gutterBottom
+            <motion.div
+              custom={0}
+              animate={controls2}
+              initial={{ y: 20, opacity: 0 }}
             >
-              Medicare at your fingertips
-            </Typography>
-            <Typography
-              gutterBottom
-              sx={{
-                color: colors.lightPurpleText,
-              }}
+              <Typography
+                variant={matches ? "h3" : "h2"}
+                sx={{
+                  fontWeight: 800,
+                  letterSpacing: 2,
+                  width: matches ? "100%" : 400,
+                  textTransform: "capitalize",
+                }}
+                gutterBottom
+              >
+                Medicare at your fingertips
+              </Typography>
+            </motion.div>
+            <motion.div
+              custom={1}
+              animate={controls2}
+              initial={{ y: 20, opacity: 0 }}
             >
-              Germiny was built using ReactJS, Redux-toolkit, and Material-UI
-              for the frontend while the backend was developed using NodeJS,
-              Expressjs, Mongodb and so much more.
-            </Typography>
-            <Typography
-              gutterBottom
-              sx={{
-                color: colors.lightPurpleText,
-                marginTop: 2,
-                marginBottom: 2,
-                display: "block",
-                textTransform: "uppercase",
-              }}
-              variant="caption"
+              <Typography
+                gutterBottom
+                sx={{
+                  color: colors.lightPurpleText,
+                }}
+              >
+                Germiny was built using ReactJS, Redux-toolkit, and Material-UI
+                for the frontend while the backend was developed using NodeJS,
+                Expressjs, Mongodb and so much more.
+              </Typography>
+            </motion.div>
+            <motion.div
+              custom={2}
+              animate={controls2}
+              initial={{ y: 20, opacity: 0 }}
             >
-              To learn more about Germiny
-            </Typography>
-            <a
+              <Typography
+                gutterBottom
+                sx={{
+                  color: colors.lightPurpleText,
+                  marginTop: 2,
+                  marginBottom: 2,
+                  display: "block",
+                  textTransform: "uppercase",
+                }}
+                variant="caption"
+              >
+                To learn more about Germiny
+              </Typography>
+            </motion.div>
+            <motion.a
               href="https://germiny.org/"
               target="_blank"
               rel="noreferrer noopener"
               style={{ textDecoration: "none", color: "inherit" }}
+              custom={3}
+              animate={controls2}
+              initial={{ y: 20, opacity: 0 }}
             >
               <AnimButton variant="contained" endIcon={<ArrowRightAltIcon />}>
                 Explore
               </AnimButton>
-            </a>
+            </motion.a>
             <Hidden smDown>
               <InView>
                 {({ ref, inView }) => (

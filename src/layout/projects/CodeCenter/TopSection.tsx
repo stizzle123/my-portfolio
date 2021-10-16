@@ -22,6 +22,7 @@ const TopSection = () => {
   const { inView, ref: refObj } = useInView({
     threshold: 0.5,
   });
+
   useEffect(() => {
     if (inView) {
       controls.start((i) => ({

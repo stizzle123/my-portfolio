@@ -9,7 +9,12 @@ const BottomSection = () => {
   const [matches] = useResponsive();
 
   return (
-    <div className={clsx(classes.container)}>
+    <div
+      className={clsx(classes.container)}
+      style={{
+        paddingBottom: matches ? 0 : 200,
+      }}
+    >
       <Box
         sx={{
           textAlign: "center",
