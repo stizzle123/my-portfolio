@@ -1,4 +1,3 @@
-import { useTheme } from "@mui/material";
 import { motion, MotionValue } from "framer-motion";
 
 interface Props {
@@ -6,7 +5,6 @@ interface Props {
 }
 
 const Overlay = ({ opacity }: Props) => {
-  const theme = useTheme();
   const spring = {
     type: "spring",
     damping: 600,
@@ -21,7 +19,7 @@ const Overlay = ({ opacity }: Props) => {
       style={{
         opacity,
         height: "100%",
-        background: theme.palette.primary.main,
+        background: "#151825",
         zIndex: 3,
         position: "absolute",
         top: 0,
