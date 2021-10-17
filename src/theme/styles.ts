@@ -107,7 +107,7 @@ const useStyles = makeStyles(
     },
 
     codecenterContainer: {
-      background: "url(/img/coding.jpeg), rgba(0,0,0,0.5)",
+      background: "url(/img/coding.jpeg), rgba(0,0,0,0.8)",
       height: "80vh",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
@@ -136,7 +136,10 @@ const useStyles = makeStyles(
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
-        background: "url(/img/handshake-sm.jpeg),  rgba(0,0,0,0.5)",
+        background: "url(/img/handshake-sm.jpeg),  rgba(0,0,0,0.6)",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
         height: "50vh",
         backgroundAttachment: "unset",
       },
@@ -174,6 +177,9 @@ const useStyles = makeStyles(
         background: "url(/img/doctor.jpeg),  rgba(0,0,0,0.3)",
         height: "50vh",
         backgroundAttachment: "unset",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
       },
     },
     resumeContainer: {
