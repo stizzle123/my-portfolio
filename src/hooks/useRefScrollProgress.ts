@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const useRefScrollProgress = () => {
   const ref = useRef<HTMLDivElement>(null);

@@ -120,6 +120,7 @@ const useStyles = makeStyles(
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
         height: "50vh",
+        backgroundAttachment: "unset",
       },
     },
     xtradersContainer: {
@@ -137,11 +138,7 @@ const useStyles = makeStyles(
         padding: theme.spacing(0.5, 1),
         background: "url(/img/handshake-sm.jpeg),  rgba(0,0,0,0.5)",
         height: "50vh",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundBlendMode: "overlay",
+        backgroundAttachment: "unset",
       },
     },
     rsedgeContainer: {
@@ -158,6 +155,7 @@ const useStyles = makeStyles(
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1),
         height: "50vh",
+        backgroundAttachment: "unset",
       },
     },
     germinyContainer: {
@@ -175,11 +173,7 @@ const useStyles = makeStyles(
         padding: theme.spacing(0.5, 1),
         background: "url(/img/doctor.jpeg),  rgba(0,0,0,0.3)",
         height: "50vh",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundBlendMode: "overlay",
+        backgroundAttachment: "unset",
       },
     },
     resumeContainer: {
