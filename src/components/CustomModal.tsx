@@ -6,11 +6,15 @@ import {
   Box,
   IconButton,
   useTheme,
+  Skeleton,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { SetStateAction } from "react";
+import ProgressiveImage from "react-progressive-graceful-image";
+
 import { colors } from "../utilities/colors";
 import AnimButton from "./AnimButton";
+import useResponsive from "../hooks/useResponsive";
 
 interface Props {
   open: boolean;
@@ -20,6 +24,7 @@ interface Props {
 
 const CustomModal = ({ open, handleClose, type }: Props) => {
   const theme = useTheme();
+  const [matches] = useResponsive();
   return (
     <>
       {open && (
@@ -57,16 +62,40 @@ const CustomModal = ({ open, handleClose, type }: Props) => {
             </IconButton>
             <Grid container>
               <Grid item xs={12} md={6}>
-                <motion.img
+                <ProgressiveImage
                   src="/img/idowu.jpeg"
-                  alt="Arifayan Idowu"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center",
+                  placeholder="/img/idowu-sm.jpeg"
+                  srcSetData={{
+                    srcSet: "/img/idowu-sm.jpeg 1x, /img/idowu.jpeg 2x",
+                    sizes: "(max-width: 600px) 1x, 2x",
                   }}
-                />
+                  delay={1000}
+                >
+                  {(src: string, loading: boolean) =>
+                    loading ? (
+                      <Skeleton
+                        sx={{
+                          width: "100%",
+                          height: matches ? 214 : 302,
+                          background: "#b1b1b1",
+                        }}
+                        animation="wave"
+                        variant="rectangular"
+                      />
+                    ) : (
+                      <motion.img
+                        src={src}
+                        alt="Arifayan Idowu"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          objectPosition: "center",
+                        }}
+                      />
+                    )
+                  }
+                </ProgressiveImage>
               </Grid>
               <Grid item xs={12} md={6}>
                 <Box sx={{ padding: 2 }}>

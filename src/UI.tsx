@@ -31,7 +31,7 @@ const UI: React.FC<IProps> = ({ toggleTheme, type }) => {
           position: "fixed",
           top: 0,
           left: 0,
-          height: 1,
+          height: 2,
           zIndex: 9999999999999,
           background: "red",
           width: "100%",
