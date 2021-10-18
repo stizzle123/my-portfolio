@@ -69,7 +69,7 @@ const CustomModal = ({ open, handleClose, type }: Props) => {
                     srcSet: "/img/idowu-sm.jpeg 1x, /img/idowu.jpeg 2x",
                     sizes: "(max-width: 600px) 1x, 2x",
                   }}
-                  delay={1000}
+                  delay={300}
                 >
                   {(src: string, loading: boolean) =>
                     loading ? (
