@@ -11,10 +11,10 @@ const theme: ThemeOptions = createTheme({
     },
     background: {
       default: type === "dark" ? "#13151e" : "#fafafa",
-      paper: type === "light" ? "#fff" : "#13151e",
+      paper: type === "dark" ? "#13151e" : "#fff",
     },
     text: {
-      primary: type === "light" ? "rgb(0 0 0 / 87%)" : "#fff",
+      primary: type === "dark" ? "#fff" : "rgb(0 0 0 / 87%)",
     },
   },
   typography: {
