@@ -105,13 +105,19 @@ const CustomModal = ({ open, handleClose, type }: Props) => {
                   >
                     Discover
                   </Typography>
-                  <Typography gutterBottom variant="h5">
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    sx={{
+                      color: colors.lightGrey,
+                    }}
+                  >
                     About Me
                   </Typography>
                   <Typography
                     gutterBottom
                     sx={{
-                      color: colors.lightGrey,
+                      color: colors.lightPurpleText,
                       fontSize: 14,
                       marginBottom: 5,
                     }}
