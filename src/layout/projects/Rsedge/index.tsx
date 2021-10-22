@@ -7,6 +7,7 @@ import BottomSection from "./BottomSection";
 import {
   setTimelineAsync,
   setTitleAsync,
+  setCountAsync,
 } from "../../../features/title/titleSlice";
 
 const THRESHOLD = [0, 0.25, 0.5, 0.75, 0.9, 1];
@@ -21,6 +22,7 @@ const Rsedge = () => {
     if (inView) {
       dispatch(setTitleAsync("Frontend Developer"));
       dispatch(setTimelineAsync("2019 - 2021"));
+      dispatch(setCountAsync("03"));
     }
   }, [inView, dispatch]);
   return (

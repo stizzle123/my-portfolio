@@ -7,11 +7,14 @@ import TopSection from "./TopSection";
 import {
   setTimelineAsync,
   setTitleAsync,
+  setCountAsync,
 } from "../../../features/title/titleSlice";
 
 const CodeCenter = () => {
   const dispatch = useDispatch();
+
   const { ref, inView } = useInView({
+    root: null,
     threshold: 0,
   });
 
@@ -20,6 +23,7 @@ const CodeCenter = () => {
     if (inView) {
       dispatch(setTitleAsync("Instructor"));
       dispatch(setTimelineAsync("2017 - 2019"));
+      dispatch(setCountAsync("01"));
     }
   }, [dispatch, inView]);
 

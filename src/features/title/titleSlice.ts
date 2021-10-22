@@ -5,6 +5,7 @@ type State = {
   title: any;
   timeline: any;
   state: string;
+  count: any;
 };
 
 const initialState: State = {
@@ -12,18 +13,25 @@ const initialState: State = {
   title: "A/O",
   timeline: null,
   state: "idle",
+  count: null,
 };
 
 export const setTitleAsync = createAsyncThunk(
   "title/setTitle",
-  async (title: string) => {
+  async (title: string | any) => {
     return title;
   }
 );
 export const setTimelineAsync = createAsyncThunk(
-  "title/setTimeline",
-  async (timeline: string) => {
+  "timeline/setTimeline",
+  async (timeline: string | any) => {
     return timeline;
+  }
+);
+export const setCountAsync = createAsyncThunk(
+  "count/setCount",
+  async (count: string | any) => {
+    return count;
   }
 );
 
@@ -54,6 +62,16 @@ export const titleSlice = createSlice({
         state.loading = false;
         state.state = "idle";
         state.timeline = payload;
+      });
+    builder
+      .addCase(setCountAsync.pending, (state) => {
+        state.loading = true;
+        state.state = "loading";
+      })
+      .addCase(setCountAsync.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.state = "idle";
+        state.count = payload;
       });
   },
 });

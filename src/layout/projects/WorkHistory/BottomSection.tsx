@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 
 import { GridListItems } from "../../../components";
 import { ItemProps } from "../../../types";
+import ScrollRevealContainer from "../../../components/ScrollRevealContainer";
 
 const jobs: ItemProps[] = [
   {
@@ -43,7 +44,9 @@ const jobs: ItemProps[] = [
 const BottomSection = () => {
   return (
     <div>
-      <Typography gutterBottom>Job History</Typography>
+      <ScrollRevealContainer>
+        <Typography gutterBottom>Job History</Typography>
+      </ScrollRevealContainer>
       {jobs.map((item, index) => (
         <GridListItems
           key={index}

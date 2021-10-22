@@ -1,4 +1,5 @@
 import { useTransform, motion, useViewportScroll } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 import { NavBar } from "./components";
 import ToggleThemeButton from "./components/ToggleThemeButton";
@@ -8,6 +9,8 @@ import Germiny from "./layout/projects/Germiny";
 import Rsedge from "./layout/projects/Rsedge";
 import WorkHistory from "./layout/projects/WorkHistory";
 import Xtraders from "./layout/projects/Xtraders";
+
+import { organizationStructuredData } from "./structured-data";
 
 interface IProps {
   toggleTheme?: any;
@@ -26,6 +29,18 @@ const UI: React.FC<IProps> = ({ toggleTheme, type }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Frontend Developer - Arifayan Idowu</title>
+        <meta content="website" property="og:type" />
+        <meta content="https://www.arifayanidowu.com/" property="og:url" />
+        <meta
+          property="og:description"
+          content="Arifayan Idowu - Frontend developer | Personal portfolio, I build websites, web applications, mobile responsive web applications, mobile app development using React Native."
+        />
+        <script type="application/ld+json">
+          {organizationStructuredData()}
+        </script>
+      </Helmet>
       <motion.div
         style={{
           position: "fixed",

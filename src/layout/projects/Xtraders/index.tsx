@@ -7,12 +7,14 @@ import TopSection from "./TopSection";
 import {
   setTimelineAsync,
   setTitleAsync,
+  setCountAsync,
 } from "../../../features/title/titleSlice";
 
 const THRESHOLD = [0, 0.25, 0.5, 0.75, 0.9, 1];
 
 const Xtraders = () => {
   const dispatch = useDispatch();
+
   const { ref, inView } = useInView({
     threshold: THRESHOLD,
   });
@@ -22,6 +24,7 @@ const Xtraders = () => {
     if (inView) {
       dispatch(setTitleAsync("Freelance"));
       dispatch(setTimelineAsync("2020 (Contract)"));
+      dispatch(setCountAsync("02"));
     }
   }, [dispatch, inView]);
 

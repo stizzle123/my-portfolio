@@ -32,27 +32,56 @@ const NavBar = ({ type }: IProps) => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   //@ts-ignore
-  const { title, timeline } = useSelector((state) => state.title);
+  const { title, timeline, count } = useSelector((state) => state.title);
 
   const transition = {
     type: "spring",
     stiffness: 200,
     damping: 30,
-    ease: "easeIn",
+    ease: "easeInOut",
+    delay: 0.5,
+  };
+  const transition2 = {
+    type: "spring",
+    stiffness: 200,
+    damping: 30,
+    ease: "easeInOut",
+    delay: 1.5,
   };
 
   const variants = {
     hidden: {
       opacity: 0,
+      x: -10,
       transition,
     },
     visible: {
       opacity: 1,
+      x: 0,
       transition,
     },
     exit: {
       opacity: 0,
+      x: -10,
       transition,
+    },
+  };
+
+  const countVariants = {
+    hidden: {
+      opacity: 0,
+      x: -50,
+      transition2,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition2,
+    },
+    exit: {
+      opacity: 0,
+      x: -20,
+      transition2,
     },
   };
 
@@ -73,38 +102,66 @@ const NavBar = ({ type }: IProps) => {
         }}
       >
         <Toolbar id="#back-to-top-anchor">
-          <motion.div
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
+          <div
             style={{
               flexGrow: 0.5,
+              position: "relative",
             }}
           >
-            <Typography
-              sx={{
-                width: matches ? "100%" : 200,
-                fontSize: matches ? 12 : 14,
-                color: colors.white,
-              }}
+            <motion.div
+              variants={countVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              key={count}
             >
-              {title}{" "}
-              {timeline && (
-                <span
-                  style={{
-                    color: colors.lightGrey,
-                    marginLeft: 2,
-                  }}
-                >
-                  {timeline}
-                </span>
-              )}
-            </Typography>
-          </motion.div>
+              <Typography
+                sx={{
+                  position: "absolute",
+                  fontFamily: "Alfa Slab One",
+                  zIndex: -10,
+                  color: "#3b3b3e82",
+                  top: -25,
+                  left: -20,
+                  width: "fit-content",
+                  fontSize: 50,
+                }}
+              >
+                {count}
+              </Typography>
+            </motion.div>
+            <motion.div
+              variants={variants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              key={title}
+            >
+              <Typography
+                sx={{
+                  width: matches ? "100%" : 200,
+                  fontSize: matches ? 12 : 14,
+                  color: colors.white,
+                  zIndex: 1,
+                }}
+              >
+                {title}{" "}
+                {timeline && (
+                  <span
+                    style={{
+                      color: colors.lightGrey,
+                      marginLeft: 2,
+                    }}
+                  >
+                    {timeline}
+                  </span>
+                )}
+              </Typography>
+            </motion.div>
+          </div>
 
           <Box sx={{ flexGrow: 1 }}>
-            <Hidden smDown>
+            <Hidden mdDown>
               <Link
                 activeClass={classes.linkActive}
                 to="codecenter"

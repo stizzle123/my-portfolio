@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import {
   setTimelineAsync,
   setTitleAsync,
+  setCountAsync,
 } from "../../../features/title/titleSlice";
 
 const WorkHistory = () => {
@@ -24,6 +25,7 @@ const WorkHistory = () => {
     if (inView) {
       dispatch(setTitleAsync("Various Roles"));
       dispatch(setTimelineAsync("2017 - 2021"));
+      dispatch(setCountAsync("05"));
     }
   }, [dispatch, inView]);
 
