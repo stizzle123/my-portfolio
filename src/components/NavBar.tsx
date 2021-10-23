@@ -41,13 +41,6 @@ const NavBar = ({ type }: IProps) => {
     ease: "easeInOut",
     delay: 0.5,
   };
-  const transition2 = {
-    type: "spring",
-    stiffness: 200,
-    damping: 30,
-    ease: "easeInOut",
-    delay: 1.5,
-  };
 
   const variants = {
     hidden: {
@@ -71,17 +64,26 @@ const NavBar = ({ type }: IProps) => {
     hidden: {
       opacity: 0,
       x: -50,
-      transition2,
+      transition: {
+        ...transition,
+        delay: 0.2,
+      },
     },
     visible: {
       opacity: 1,
       x: 0,
-      transition2,
+      transition: {
+        ...transition,
+        delay: 0.2,
+      },
     },
     exit: {
       opacity: 0,
       x: -20,
-      transition2,
+      transition: {
+        ...transition,
+        delay: 0.2,
+      },
     },
   };
 
@@ -120,11 +122,14 @@ const NavBar = ({ type }: IProps) => {
                   position: "absolute",
                   fontFamily: "Alfa Slab One",
                   zIndex: -10,
-                  color: "#3b3b3e82",
+                  color: "#3b3b3e6e",
                   top: -25,
                   left: -20,
                   width: "fit-content",
                   fontSize: 50,
+                  [theme.breakpoints.down("sm")]: {
+                    left: -15,
+                  },
                 }}
               >
                 {count}
@@ -135,7 +140,7 @@ const NavBar = ({ type }: IProps) => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              key={title}
+              key={`${count}-1`}
             >
               <Typography
                 sx={{
