@@ -20,13 +20,14 @@ const ScrollRevealContainer = ({ children }: Props) => {
           type: "spring",
           stiffness: 300,
           damping: 100,
+          duration: 5,
         },
       });
     }
   }, [controls, inView]);
 
   return (
-    <motion.div ref={ref} animate={controls} initial={{ y: 20, opacity: 0 }}>
+    <motion.div ref={ref} animate={controls} initial={{ y: 50, opacity: 0 }}>
       {children}
     </motion.div>
   );

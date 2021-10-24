@@ -1,5 +1,6 @@
 body {
   color: "#a0989e";
+  transition: all 200ms ease-in-out;
 }
 
 .active {

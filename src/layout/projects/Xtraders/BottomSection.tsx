@@ -36,7 +36,7 @@ const BottomSection = () => {
         className={clsx(classes.container)}
         ref={ref}
         style={{
-          paddingBottom: matches ? 100 : 200,
+          paddingBottom: matches ? 100 : 110,
         }}
       >
         <Grid
@@ -188,6 +188,23 @@ const BottomSection = () => {
             </InView>
           </Grid>
         </Grid>
+        <ScrollRevealContainer>
+          <a
+            href="https://xtraders.herokuapp.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              marginTop: 60,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <AnimButton variant="contained">View Project</AnimButton>
+          </a>
+        </ScrollRevealContainer>
       </div>
     </AnimatePresence>
   );

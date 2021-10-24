@@ -276,6 +276,7 @@ const NavBar = ({ type }: IProps) => {
                     width: 32,
                     height: 32,
                   }}
+                  alt="Arifayan Idowu Olatubosun"
                 />
               </IconButton>
             </motion.div>

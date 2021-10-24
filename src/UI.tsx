@@ -34,8 +34,12 @@ const UI: React.FC<IProps> = ({ toggleTheme, type }) => {
         <meta content="website" property="og:type" />
         <meta content="https://www.arifayanidowu.com/" property="og:url" />
         <meta
-          property="og:description"
+          name="og:description"
           content="Arifayan Idowu - Frontend developer | Personal portfolio, I build websites, web applications, mobile responsive web applications, mobile app development using React Native."
+        />
+        <meta
+          property="og:keywords"
+          content="Best portfolio, Best portfolio design, Portfolio design, Best UI designs, UI designs, Programming, Analysis, Analytics, Coding, Optimization, API, ReactJS Developer, Software design, GIT, Project Management, Software Developer, Mobile developer, Frontend developer,  UI designer, Material UI, Senior Developer, Fullstack Developer, Web Developer, Portfolio, personal portfolio, Mobile responsiveness"
         />
         <script type="application/ld+json">
           {organizationStructuredData()}

@@ -55,11 +55,16 @@ const ToggleThemeButton = ({ toggleTheme, type }: Props) => {
             onClick={handleScrollTop}
             sx={{
               color: "#fff",
+              transition: "all 900ms ease-in",
               backgroundColor: "#3636ac",
               backgroundImage:
                 "linear-gradient(129deg, #3636ac 0%, #430745 100%)",
+              "&:hover": {
+                background: "linear-gradient(129deg, #3636a1 0%, #630b66 100%)",
+              },
             }}
             size="medium"
+            aria-label="Scroll to top"
           >
             <ArrowUpwardIcon />
           </Fab>
@@ -67,6 +72,7 @@ const ToggleThemeButton = ({ toggleTheme, type }: Props) => {
         <Fab
           onClick={toggleTheme}
           sx={{
+            transition: "all 900ms ease-in",
             background:
               type === "dark"
                 ? "linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%)"
@@ -80,6 +86,7 @@ const ToggleThemeButton = ({ toggleTheme, type }: Props) => {
             },
           }}
           size="medium"
+          aria-label="Toggle light/dark theme"
         >
           {type === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
         </Fab>

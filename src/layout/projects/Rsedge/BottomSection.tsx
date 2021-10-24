@@ -13,7 +13,7 @@ const BottomSection = () => {
     <div
       className={clsx(classes.container)}
       style={{
-        paddingBottom: matches ? 100 : 200,
+        paddingBottom: matches ? 100 : 110,
       }}
     >
       <Box
@@ -61,6 +61,20 @@ const BottomSection = () => {
             loading="lazy"
             draggable={false}
           />
+        </ScrollRevealContainer>
+        <ScrollRevealContainer>
+          <Typography
+            variant="subtitle1"
+            sx={{
+              color: "#b1b1b1",
+              marginTop: 5,
+              textDecoration: "underline",
+              cursor: "not-allowed",
+            }}
+            align="center"
+          >
+            Link not available for this project
+          </Typography>
         </ScrollRevealContainer>
       </div>
     </div>

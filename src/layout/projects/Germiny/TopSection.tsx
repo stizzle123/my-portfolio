@@ -54,7 +54,7 @@ const TopSection = () => {
                 Germiny is a platform that provides easy access to medical care
                 by leveraging the power of technology. Providing jobs for
                 medical practitioners where they can make money at their spare
-                time, also by providing a concierge service.
+                time.
               </Typography>
             </ScrollRevealContainer>
           </div>

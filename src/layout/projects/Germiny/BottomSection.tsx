@@ -33,7 +33,7 @@ const BottomSection = () => {
     <div
       className={clsx(classes.container)}
       style={{
-        paddingBottom: matches ? 100 : 200,
+        paddingBottom: matches ? 100 : 110,
       }}
       ref={ref}
     >
@@ -189,6 +189,23 @@ const BottomSection = () => {
               className={clsx(classes.imgWrapper)}
               loading="lazy"
             />
+          </ScrollRevealContainer>
+          <ScrollRevealContainer>
+            <a
+              href="https://germiny.org/products"
+              target="_blank"
+              rel="noreferrer noopener"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                marginTop: 60,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <AnimButton variant="contained">View Project</AnimButton>
+            </a>
           </ScrollRevealContainer>
         </Grid>
       </Grid>

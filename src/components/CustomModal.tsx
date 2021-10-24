@@ -82,7 +82,7 @@ const CustomModal = ({ open, handleClose, type }: Props) => {
                     ) : (
                       <motion.img
                         src={src}
-                        alt="Arifayan Idowu"
+                        alt="Arifayan Idowu Olatubosun"
                         style={{
                           width: "100%",
                           height: "100%",

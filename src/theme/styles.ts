@@ -77,11 +77,8 @@ const useStyles = makeStyles(
     },
     imgWrapper: {
       width: "100%",
-      border: `0.5px solid ${
-        theme.palette.mode === "light" ? "#f1f1f1" : theme.palette.primary.main
-      }`,
       borderRadius: 3,
-      boxShadow: `0 0 24px ${
+      boxShadow: `0 0 4px ${
         theme.palette.mode === "light"
           ? "rgba(139, 138, 138, 0.161)"
           : "rgba(0, 0, 0, 0.161)"
