@@ -40,7 +40,7 @@ const GridListItems = ({
           </Typography>
         </Grid>
         <Grid item xs={12} md={3}>
-          <Typography gutterBottom sx={{ fontSize: 17 }}>
+          <Typography gutterBottom sx={{ fontSize: 17, fontWeight: 600 }}>
             {company}
           </Typography>
         </Grid>

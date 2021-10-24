@@ -68,20 +68,20 @@ const ToggleThemeButton = ({ toggleTheme, type }: Props) => {
           onClick={toggleTheme}
           sx={{
             background:
-              type === "light"
-                ? "linear-gradient(90deg, #d53369 0%, #daae51 100%)"
-                : "linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%)",
+              type === "dark"
+                ? "linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%)"
+                : "linear-gradient(90deg, #d53369 0%, #daae51 100%)",
             color: "#fff",
             "&:hover": {
               background:
-                type === "light"
-                  ? "linear-gradient(90deg, #c92a5f 0%, #b9913b 100%)"
-                  : "linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%)",
+                type === "dark"
+                  ? "linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%)"
+                  : "linear-gradient(90deg, #c92a5f 0%, #b9913b 100%)",
             },
           }}
           size="medium"
         >
-          {type === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+          {type === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
         </Fab>
       </div>
     </AnimatePresence>

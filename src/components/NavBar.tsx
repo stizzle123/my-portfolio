@@ -106,7 +106,7 @@ const NavBar = ({ type }: IProps) => {
         <Toolbar id="#back-to-top-anchor">
           <div
             style={{
-              flexGrow: 0.5,
+              flexGrow: 0.3,
               position: "relative",
             }}
           >
