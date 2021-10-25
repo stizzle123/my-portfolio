@@ -15,7 +15,7 @@ const useStyles = makeStyles(
       position: "relative",
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(2, 1),
+        padding: theme.spacing(2, 1.5),
       },
     },
     headerContainer: {
@@ -25,7 +25,7 @@ const useStyles = makeStyles(
       padding: theme.spacing(5, 1.5),
       [theme.breakpoints.down("sm")]: {
         height: "70vh",
-        padding: theme.spacing(0.5, 1),
+        padding: theme.spacing(0.5, 1.5),
       },
     },
     headerTitle: {
@@ -78,6 +78,7 @@ const useStyles = makeStyles(
     imgWrapper: {
       width: "100%",
       borderRadius: 3,
+      border: "0.2px solid #f1f1f1",
       boxShadow: `0 0 4px ${
         theme.palette.mode === "light"
           ? "rgba(139, 138, 138, 0.161)"
@@ -115,7 +116,7 @@ const useStyles = makeStyles(
       position: "relative",
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(0.5, 1),
+        padding: theme.spacing(0.5, 1.5),
         height: "50vh",
         backgroundAttachment: "unset",
       },
@@ -132,7 +133,7 @@ const useStyles = makeStyles(
       position: "relative",
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(0.5, 1),
+        padding: theme.spacing(0.5, 1.5),
         background: "url(/img/handshake-sm.jpeg),  rgba(0,0,0,0.6)",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -153,7 +154,7 @@ const useStyles = makeStyles(
       position: "relative",
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(0.5, 1),
+        padding: theme.spacing(0.5, 1.5),
         height: "50vh",
         backgroundAttachment: "unset",
       },
@@ -170,7 +171,7 @@ const useStyles = makeStyles(
       position: "relative",
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(0.5, 1),
+        padding: theme.spacing(0.5, 1.5),
         background: "url(/img/doctor.jpeg),  rgba(0,0,0,0.3)",
         height: "50vh",
         backgroundAttachment: "unset",
@@ -185,7 +186,7 @@ const useStyles = makeStyles(
       padding: theme.spacing(3),
 
       [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(0.5, 1),
+        padding: theme.spacing(0.5, 1.5),
       },
     },
     themeBtnAbsolute: {

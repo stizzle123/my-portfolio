@@ -54,6 +54,8 @@ const BottomSection = () => {
                 animate={controls}
                 draggable={false}
                 loading="lazy"
+                width="100%"
+                height="auto"
               />
             </div>
           </Grid>
@@ -182,6 +184,8 @@ const BottomSection = () => {
                     ref={ref}
                     draggable={false}
                     loading="lazy"
+                    width="100%"
+                    height="auto"
                   />
                 </div>
               )}

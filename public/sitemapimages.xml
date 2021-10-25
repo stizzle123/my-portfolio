@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+  <loc>https://arifayanidowu.com/</loc>
+  <image:image>
+    <image:loc>
+    https://arifayanidowu.com/img/coding.jpeg
+    </image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>
+    https://arifayanidowu.com/img/handshake.jpeg
+    </image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>
+    https://arifayanidowu.com/img/handshake-sm.jpeg
+    </image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>
+    https://arifayanidowu.com/img/chart.jpeg
+    </image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>
+    https://arifayanidowu.com/img/doctor-lg.jpeg
+    </image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>
+    https://arifayanidowu.com/img/doctor.jpeg
+    </image:loc>
+  </image:image>
+  <lastmod>2021-10-25T15:55:24+00:00</lastmod>
+</url>
+</urlset>

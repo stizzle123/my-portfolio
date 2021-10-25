@@ -19,6 +19,7 @@ const BottomSection = () => {
 
   const { ref, inView } = useInView({
     threshold: 0,
+    triggerOnce: false,
   });
 
   useEffect(() => {
@@ -70,6 +71,8 @@ const BottomSection = () => {
                   animate={controls}
                   draggable={false}
                   loading="lazy"
+                  width="100%"
+                  height="auto"
                 />
               )
             }
@@ -162,6 +165,8 @@ const BottomSection = () => {
                     ref={ref}
                     draggable={false}
                     loading="lazy"
+                    width="100%"
+                    height="auto"
                   />
                 )}
               </InView>

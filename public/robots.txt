@@ -3,3 +3,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://arifayanidowu.com/sitemap.xml
+Sitemap: https://arifayanidowu.com/sitemapimages.xml

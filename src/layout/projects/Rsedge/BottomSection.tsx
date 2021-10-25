@@ -60,6 +60,8 @@ const BottomSection = () => {
             className={clsx(classes.imgWrapper)}
             loading="lazy"
             draggable={false}
+            width="100%"
+            height="auto"
           />
         </ScrollRevealContainer>
         <ScrollRevealContainer>

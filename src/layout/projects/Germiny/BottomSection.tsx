@@ -54,6 +54,8 @@ const BottomSection = () => {
             style={{
               borderWidth: 0,
             }}
+            width="100%"
+            height="auto"
           />
         </Grid>
         <Grid item md={6} sm={12}>
@@ -136,6 +138,8 @@ const BottomSection = () => {
                     ref={ref}
                     draggable={false}
                     loading="lazy"
+                    width="100%"
+                    height="auto"
                   />
                 )}
               </InView>

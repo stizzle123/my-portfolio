@@ -18,9 +18,7 @@ const theme: ThemeOptions = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Roboto Condensed", "Poppins", "Rubik", "Alfa Slab One"].join(
-      ","
-    ),
+    fontFamily: ["Roboto Condensed", "Alfa Slab One"].join(","),
   },
 });
 

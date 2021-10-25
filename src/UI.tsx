@@ -28,7 +28,11 @@ const UI: React.FC<IProps> = ({ toggleTheme, type }) => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        transition: "all 200ms ease-in-out",
+      }}
+    >
       <Helmet>
         <title>Frontend Developer - Arifayan Idowu</title>
         <meta content="website" property="og:type" />
@@ -70,7 +74,7 @@ const UI: React.FC<IProps> = ({ toggleTheme, type }) => {
       <Germiny />
       <WorkHistory />
       <ToggleThemeButton {...{ toggleTheme, type }} />
-    </>
+    </div>
   );
 };
 
