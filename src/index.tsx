@@ -4,7 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
 
 import { persistor, store } from "./app/store";
-import * as serviceWorker from "./serviceWorker";
+import * as serviceWorker from "./service-worker";
 
 import "./index.css";
 import App from "./App";
