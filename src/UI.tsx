@@ -1,16 +1,16 @@
+import React from "react";
 import { useTransform, motion, useViewportScroll } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
-import { NavBar } from "./components";
+import { organizationStructuredData } from "./structured-data";
 import ToggleThemeButton from "./components/ToggleThemeButton";
+import { NavBar } from "./components";
 import { Header } from "./layout";
 import CodeCenter from "./layout/projects/CodeCenter";
 import Germiny from "./layout/projects/Germiny";
 import Rsedge from "./layout/projects/Rsedge";
 import WorkHistory from "./layout/projects/WorkHistory";
 import Xtraders from "./layout/projects/Xtraders";
-
-import { organizationStructuredData } from "./structured-data";
 
 interface IProps {
   toggleTheme?: any;

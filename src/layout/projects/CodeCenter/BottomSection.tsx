@@ -66,8 +66,8 @@ const BottomSection = () => {
                   animate={controls}
                   draggable={false}
                   loading="lazy"
-                  width="100%"
-                  height="auto"
+                  width="100"
+                  height="110%"
                 />
               )
             }
@@ -159,8 +159,8 @@ const BottomSection = () => {
                     ref={ref}
                     draggable={false}
                     loading="lazy"
-                    width="100%"
-                    height="auto"
+                    width="100"
+                    height="100%"
                   />
                 )}
               </InView>

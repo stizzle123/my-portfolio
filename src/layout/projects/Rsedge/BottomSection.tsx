@@ -9,8 +9,6 @@ const BottomSection = () => {
   const classes = useStyles();
   const [matches] = useResponsive();
 
-  const type: any = localStorage.getItem("theme:mode") || "light";
-
   return (
     <div
       className={clsx(classes.container)}
@@ -55,27 +53,15 @@ const BottomSection = () => {
       </Box>
       <div style={{ position: "relative" }}>
         <ScrollRevealContainer>
-          {type === "dark" ? (
-            <img
-              alt="rsedge"
-              src={"/img/rsedge-dark.webp"}
-              className={clsx(classes.imgWrapper)}
-              loading="lazy"
-              draggable={false}
-              width="100%"
-              height="auto"
-            />
-          ) : (
-            <img
-              alt="rsedge"
-              src={"/img/rsedge.webp"}
-              className={clsx(classes.imgWrapper)}
-              loading="lazy"
-              draggable={false}
-              width="100%"
-              height="auto"
-            />
-          )}
+          <img
+            alt="rsedge"
+            src={"/img/rsedge.webp"}
+            className={clsx(classes.imgWrapper)}
+            loading="lazy"
+            draggable={false}
+            width="100"
+            height="110%"
+          />
         </ScrollRevealContainer>
         <ScrollRevealContainer>
           <Typography

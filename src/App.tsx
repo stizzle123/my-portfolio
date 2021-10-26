@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { AnimateSharedLayout } from "framer-motion";
 import {
   CssBaseline,
@@ -43,7 +43,9 @@ function App() {
     <AnimateSharedLayout type="crossfade">
       <ThemeProvider theme={theming}>
         <CssBaseline />
-        <UI {...{ toggleTheme, type }} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <UI {...{ toggleTheme, type }} />
+        </Suspense>
       </ThemeProvider>
     </AnimateSharedLayout>
   );

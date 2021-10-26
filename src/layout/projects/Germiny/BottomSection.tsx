@@ -43,19 +43,21 @@ const BottomSection = () => {
         spacing={5}
       >
         <Grid item md={6} sm={12}>
-          <motion.img
-            src={`/img/germiny.webp`}
-            alt="germiny homepage"
-            className={clsx(classes.imgWrapper, classes.imgAbsolute)}
-            animate={controls}
-            draggable={false}
-            loading="lazy"
-            style={{
-              borderWidth: 0,
-            }}
-            width="100%"
-            height="auto"
-          />
+          <div className={classes.imgAbsolute}>
+            <motion.img
+              src={`/img/germiny.webp`}
+              alt="germiny homepage"
+              className={clsx(classes.imgWrapper)}
+              animate={controls}
+              draggable={false}
+              loading="lazy"
+              style={{
+                borderWidth: 0,
+              }}
+              width="100"
+              height="100%"
+            />
+          </div>
         </Grid>
         <Grid item md={6} sm={12}>
           <div className={classes.mt60}>
@@ -136,8 +138,8 @@ const BottomSection = () => {
                     ref={ref}
                     draggable={false}
                     loading="lazy"
-                    width="100%"
-                    height="auto"
+                    width="100"
+                    height="100%"
                   />
                 )}
               </InView>
@@ -189,6 +191,9 @@ const BottomSection = () => {
               alt="Germiny about page"
               className={clsx(classes.imgWrapper)}
               loading="lazy"
+              draggable={false}
+              width="100"
+              height="100%"
             />
           </ScrollRevealContainer>
           <ScrollRevealContainer>

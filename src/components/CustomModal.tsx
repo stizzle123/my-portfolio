@@ -84,11 +84,11 @@ const CustomModal = ({ open, handleClose, type }: Props) => {
                         src={src}
                         alt="Arifayan Idowu Olatubosun"
                         style={{
-                          width: "100%",
-                          height: "100%",
                           objectFit: "cover",
                           objectPosition: "center",
                         }}
+                        width="100%"
+                        height="100%"
                       />
                     )
                   }
@@ -99,8 +99,10 @@ const CustomModal = ({ open, handleClose, type }: Props) => {
                   <Typography
                     gutterBottom
                     sx={{
-                      fontSize: 13,
+                      fontSize: 10,
                       color: colors.lightPurpleText,
+                      textTransform: "uppercase",
+                      letterSpacing: 2,
                     }}
                   >
                     Discover
