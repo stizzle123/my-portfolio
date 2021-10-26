@@ -1,6 +1,6 @@
 import { createTheme, ThemeOptions } from "@mui/material";
 
-let type: any = localStorage.getItem("theme:mode") || "light";
+const type: any = localStorage.getItem("theme:mode") || "light";
 
 const theme: ThemeOptions = createTheme({
   palette: {

@@ -10,7 +10,7 @@ export function organizationStructuredData() {
     alternateName: "Arifayan Idowu",
     url: "https://arifayanidowu.com",
     logo: "https://arifayanidowu.com/logo192.png",
-    image: "https://arifayanidowu.com/idowu-sm.jpeg",
+    image: "https://arifayanidowu.com/idowu.webp",
     sameAs: [
       "https://github.com/stizzle123",
       "https://twitter.com/arifayanidowu",

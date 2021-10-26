@@ -78,7 +78,9 @@ const useStyles = makeStyles(
     imgWrapper: {
       width: "100%",
       borderRadius: 3,
-      border: "0.2px solid #f1f1f1",
+      border: `0.2px solid ${
+        theme.palette.mode === "dark" ? "transparent" : "#f1f1f1"
+      }`,
       boxShadow: `0 0 4px ${
         theme.palette.mode === "light"
           ? "rgba(139, 138, 138, 0.161)"
@@ -105,7 +107,7 @@ const useStyles = makeStyles(
     },
 
     codecenterContainer: {
-      background: "url(/img/coding.jpeg), rgba(0,0,0,0.8)",
+      background: "url(/img/coding.webp), rgba(0,0,0,0.8)",
       height: "80vh",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
@@ -123,7 +125,7 @@ const useStyles = makeStyles(
     },
     xtradersContainer: {
       height: "80vh",
-      background: "url(/img/handshake.jpeg), rgba(0,0,0,0.6)",
+      background: "url(/img/handshake.webp), rgba(0,0,0,0.6)",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
@@ -134,17 +136,13 @@ const useStyles = makeStyles(
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1.5),
-        background: "url(/img/handshake-sm.jpeg),  rgba(0,0,0,0.6)",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
         height: "50vh",
         backgroundAttachment: "unset",
       },
     },
     rsedgeContainer: {
       height: "80vh",
-      background: "url(/img/chart.jpeg), rgba(0,0,0,0.2)",
+      background: "url(/img/chart.webp), rgba(0,0,0,0.2)",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
@@ -161,7 +159,7 @@ const useStyles = makeStyles(
     },
     germinyContainer: {
       height: "80vh",
-      background: "url(/img/doctor-lg.jpeg), rgba(0,0,0,0.2)",
+      background: "url(/img/doctor-lg.webp), rgba(0,0,0,0.2)",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
@@ -172,12 +170,8 @@ const useStyles = makeStyles(
       padding: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(0.5, 1.5),
-        background: "url(/img/doctor.jpeg),  rgba(0,0,0,0.3)",
         height: "50vh",
         backgroundAttachment: "unset",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
       },
     },
     resumeContainer: {

@@ -271,7 +271,7 @@ const NavBar = ({ type }: IProps) => {
             >
               <IconButton onClick={() => setOpen(true)} size="medium">
                 <Avatar
-                  src="/img/idowu-sm.jpeg"
+                  src="/img/idowu.webp"
                   sx={{
                     width: 32,
                     height: 32,

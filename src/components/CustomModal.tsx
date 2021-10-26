@@ -61,10 +61,10 @@ const CustomModal = ({ open, handleClose, type }: Props) => {
             <Grid container>
               <Grid item xs={12} md={6}>
                 <ProgressiveImage
-                  src="/img/idowu.jpeg"
-                  placeholder="/img/idowu-sm.jpeg"
+                  src="/img/idowu.webp"
+                  placeholder="/img/idowu.webp"
                   srcSetData={{
-                    srcSet: "/img/idowu-sm.jpeg 1x, /img/idowu.jpeg 2x",
+                    srcSet: "/img/idowu.webp 1x, /img/idowu.webp 2x",
                     sizes: "(max-width: 600px) 1x, 2x",
                   }}
                 >

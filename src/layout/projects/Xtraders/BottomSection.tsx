@@ -16,6 +16,7 @@ const BottomSection = () => {
 
   const [matches] = useResponsive();
   const controls = useAnimation();
+  const type: any = localStorage.getItem("theme:mode") || "light";
 
   const { ref, inView } = useInView({
     threshold: 0,
@@ -46,17 +47,29 @@ const BottomSection = () => {
         >
           <Grid item md={6} sm={12}>
             <div className={classes.imgAbsolute}>
-              <motion.img
-                src={`/img/xtraders.png`}
-                alt="xtraders"
-                srcSet={`/img/xtraders.png`}
-                className={clsx(classes.imgWrapper)}
-                animate={controls}
-                draggable={false}
-                loading="lazy"
-                width="100%"
-                height="auto"
-              />
+              {type === "dark" ? (
+                <motion.img
+                  src={`/img/xtraders-dark.webp`}
+                  alt="xtraders dark theme home"
+                  className={clsx(classes.imgWrapper)}
+                  animate={controls}
+                  draggable={false}
+                  loading="lazy"
+                  width="100%"
+                  height="auto"
+                />
+              ) : (
+                <motion.img
+                  src={`/img/xtraders.webp`}
+                  alt="xtraders"
+                  className={clsx(classes.imgWrapper)}
+                  animate={controls}
+                  draggable={false}
+                  loading="lazy"
+                  width="100%"
+                  height="auto"
+                />
+              )}
             </div>
           </Grid>
           <Grid item md={6} sm={12}>
@@ -163,30 +176,55 @@ const BottomSection = () => {
             <InView>
               {({ ref, inView }) => (
                 <div style={{ position: "relative" }}>
-                  <motion.img
-                    src={`/img/xtraders-prod.png`}
-                    alt="xtraders2"
-                    srcSet={`/img/xtraders-prod.png 2x`}
-                    className={clsx(classes.imgWrapper)}
-                    initial={{
-                      y: -20,
-                    }}
-                    animate={
-                      inView && {
-                        y: 0,
-                        transition: {
-                          duration: 3,
-                          stiffness: 100,
-                          damping: 10,
-                        },
+                  {type === "dark" ? (
+                    <motion.img
+                      src={`/img/xtraders-prod-dark.webp`}
+                      alt="xtraders dark 2"
+                      className={clsx(classes.imgWrapper)}
+                      initial={{
+                        y: -20,
+                      }}
+                      animate={
+                        inView && {
+                          y: 0,
+                          transition: {
+                            duration: 3,
+                            stiffness: 100,
+                            damping: 10,
+                          },
+                        }
                       }
-                    }
-                    ref={ref}
-                    draggable={false}
-                    loading="lazy"
-                    width="100%"
-                    height="auto"
-                  />
+                      ref={ref}
+                      draggable={false}
+                      loading="lazy"
+                      width="100%"
+                      height="auto"
+                    />
+                  ) : (
+                    <motion.img
+                      src={`/img/xtraders-prod.webp`}
+                      alt="xtraders2"
+                      className={clsx(classes.imgWrapper)}
+                      initial={{
+                        y: -20,
+                      }}
+                      animate={
+                        inView && {
+                          y: 0,
+                          transition: {
+                            duration: 3,
+                            stiffness: 100,
+                            damping: 10,
+                          },
+                        }
+                      }
+                      ref={ref}
+                      draggable={false}
+                      loading="lazy"
+                      width="100%"
+                      height="auto"
+                    />
+                  )}
                 </div>
               )}
             </InView>

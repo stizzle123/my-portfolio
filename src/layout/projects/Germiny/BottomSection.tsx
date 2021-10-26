@@ -44,9 +44,8 @@ const BottomSection = () => {
       >
         <Grid item md={6} sm={12}>
           <motion.img
-            src={`/img/germiny-min.png`}
-            alt="germiny home"
-            srcSet="/img/germiny.png 2x"
+            src={`/img/germiny.webp`}
+            alt="germiny homepage"
             className={clsx(classes.imgWrapper, classes.imgAbsolute)}
             animate={controls}
             draggable={false}
@@ -117,9 +116,8 @@ const BottomSection = () => {
               <InView>
                 {({ ref, inView }) => (
                   <motion.img
-                    src="/img/germiny-product-min.png"
-                    alt="germiny product"
-                    srcSet="/img/germiny-product-min.png 2x"
+                    src="/img/germiny-product.webp"
+                    alt="germiny product page"
                     className={clsx(classes.imgWrapper)}
                     style={{ marginTop: 100 }}
                     initial={{
@@ -187,9 +185,8 @@ const BottomSection = () => {
           </ScrollRevealContainer>
           <ScrollRevealContainer>
             <img
-              src="/img/germiny-about-sm.png"
-              srcSet="/img/germiny-about.png 2x"
-              alt="Germiny about UI"
+              src="/img/germiny-about.webp"
+              alt="Germiny about page"
               className={clsx(classes.imgWrapper)}
               loading="lazy"
             />

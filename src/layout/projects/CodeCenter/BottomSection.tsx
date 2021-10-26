@@ -46,13 +46,8 @@ const BottomSection = () => {
       >
         <Grid item md={6} sm={12}>
           <ProgressiveImage
-            src={`/img/codecenter-lg-min.png`}
-            placeholder={`/img/codecenter-sm.png`}
-            srcSetData={{
-              srcSet:
-                "/img/codecenter-sm.png 1x, /img/codecenter-lg-min.png 2x",
-              sizes: "(max-width: 600px) 1x, 2x",
-            }}
+            src={`/img/codecenter-lg-min.webp`}
+            placeholder={`/img/codecenter-lg-min.webp`}
           >
             {(src: any, loading: boolean) =>
               loading ? (
@@ -144,9 +139,8 @@ const BottomSection = () => {
               <InView>
                 {({ ref, inView }) => (
                   <motion.img
-                    src={`/img/codecenter-lg-2.png`}
+                    src={`/img/codecenter-lg-2.webp`}
                     alt="codecenter2"
-                    srcSet={`/img/codecenter-lg-2.png 2x`}
                     className={clsx(classes.imgWrapper)}
                     style={{ marginTop: 100 }}
                     initial={{
