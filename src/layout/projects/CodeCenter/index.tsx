@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
 import { useDispatch } from "react-redux";
 
 import BottomSection from "./BottomSection";
@@ -13,26 +12,23 @@ import {
 const CodeCenter = () => {
   const dispatch = useDispatch();
 
-  const { ref, inView } = useInView({
-    root: null,
-    threshold: 0,
-    initialInView: true,
-  });
-
-  useEffect(() => {
-    //@ts-ignore
-    if (inView) {
+  const updateTitleAsync = (inView: boolean, entry: any) => {
+    if (inView && entry.target.id === "codecenter") {
       dispatch(setTitleAsync("Instructor"));
       dispatch(setTimelineAsync("2017 - 2019"));
       dispatch(setCountAsync("01"));
     }
-  }, [inView, dispatch]);
+  };
 
   return (
-    <div id="codecenter" ref={ref}>
-      <TopSection />
-      <BottomSection />
-    </div>
+    <InView onChange={(inView, entry) => updateTitleAsync(inView, entry)}>
+      {({ ref }) => (
+        <div id="codecenter" ref={ref}>
+          <TopSection />
+          <BottomSection />
+        </div>
+      )}
+    </InView>
   );
 };
 

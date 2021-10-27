@@ -36,7 +36,7 @@ const CustomModal = ({ open, handleClose, type }: Props) => {
             PaperProps={{
               square: true,
               sx: {
-                background: type === "light" ? "#fff" : "#151827",
+                background: type === "dark" ? "#151827" : "#fff",
                 overflow: "hidden",
               },
             }}

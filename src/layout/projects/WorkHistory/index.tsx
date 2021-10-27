@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
 import { useDispatch } from "react-redux";
 
 import { useStyles } from "../../../theme";
@@ -16,25 +15,24 @@ const WorkHistory = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
-
-  useEffect(() => {
-    //@ts-ignore
-    if (inView) {
+  const updateTitleAsync = (inView: boolean, entry: any) => {
+    if (inView && entry.target.id === "resume") {
       dispatch(setTitleAsync("Various Roles"));
       dispatch(setTimelineAsync("2017 - 2021"));
       dispatch(setCountAsync("05"));
     }
-  }, [dispatch, inView]);
+  };
 
   return (
-    <div id="resume" className={classes.resumeContainer} ref={ref}>
-      <TopSection />
-      <BottomSection />
-      <Footer />
-    </div>
+    <InView onChange={(inView, entry) => updateTitleAsync(inView, entry)}>
+      {({ ref }) => (
+        <div id="resume" className={classes.resumeContainer} ref={ref}>
+          <TopSection />
+          <BottomSection />
+          <Footer />
+        </div>
+      )}
+    </InView>
   );
 };
 

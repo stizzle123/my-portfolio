@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
 import { useDispatch } from "react-redux";
 
 import TopSection from "./TopSection";
@@ -12,27 +11,24 @@ import {
 
 const Germiny = () => {
   const dispatch = useDispatch();
-  const { ref, inView } = useInView({
-    root: null,
-    threshold: 0,
-    initialInView: true,
-  });
 
-  useEffect(() => {
-    //@ts-ignore
-
-    if (inView) {
+  const updateTitleAsync = (inView: boolean, entry: any) => {
+    if (inView && entry.target.id === "germiny") {
       dispatch(setTitleAsync("Frontend Developer"));
       dispatch(setTimelineAsync("2021 (Contract)"));
       dispatch(setCountAsync("04"));
     }
-  }, [dispatch, inView]);
+  };
 
   return (
-    <div id="germiny" ref={ref}>
-      <TopSection />
-      <BottomSection />
-    </div>
+    <InView onChange={(inView, entry) => updateTitleAsync(inView, entry)}>
+      {({ ref }) => (
+        <div id="germiny" ref={ref}>
+          <TopSection />
+          <BottomSection />
+        </div>
+      )}
+    </InView>
   );
 };
 

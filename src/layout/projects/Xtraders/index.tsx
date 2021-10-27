@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
 import { useDispatch } from "react-redux";
 
 import BottomSection from "./BottomSection";
@@ -10,30 +9,26 @@ import {
   setCountAsync,
 } from "../../../features/title/titleSlice";
 
-const THRESHOLD = [0, 0.25, 0.5, 0.75, 0.9, 1];
-
 const Xtraders = () => {
   const dispatch = useDispatch();
 
-  const { ref, inView } = useInView({
-    threshold: THRESHOLD,
-    initialInView: true,
-  });
-
-  useEffect(() => {
-    //@ts-ignore
-    if (inView) {
+  const updateTitleAsync = (inView: boolean, entry: any) => {
+    if (inView && entry.target.id === "xtraders") {
       dispatch(setTitleAsync("Freelance"));
       dispatch(setTimelineAsync("2020 (Contract)"));
       dispatch(setCountAsync("02"));
     }
-  }, [inView, dispatch]);
+  };
 
   return (
-    <div id="xtraders" ref={ref}>
-      <TopSection />
-      <BottomSection />
-    </div>
+    <InView onChange={(inView, entry) => updateTitleAsync(inView, entry)}>
+      {({ ref }) => (
+        <div id="xtraders" ref={ref}>
+          <TopSection />
+          <BottomSection />
+        </div>
+      )}
+    </InView>
   );
 };
 

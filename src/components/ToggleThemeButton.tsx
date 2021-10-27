@@ -40,6 +40,14 @@ const ToggleThemeButton = ({ toggleTheme, type }: Props) => {
     }),
   };
 
+  const arrowAnimation = {
+    visible: (trigger: boolean) => ({
+      x: trigger ? 0 : -80,
+      opacity: trigger ? 1 : 0,
+      transition: transition(0.3),
+    }),
+  };
+
   return (
     <AnimatePresence>
       <div className={classes.themeBtnAbsolute}>
@@ -54,6 +62,7 @@ const ToggleThemeButton = ({ toggleTheme, type }: Props) => {
           <Fab
             onClick={handleScrollTop}
             sx={{
+              overflow: "hidden",
               color: "#fff",
               transition: "all 900ms ease-in",
               backgroundColor: "#3636ac",
@@ -66,7 +75,14 @@ const ToggleThemeButton = ({ toggleTheme, type }: Props) => {
             size="medium"
             aria-label="Scroll to top"
           >
-            <ArrowUpwardIcon />
+            <motion.div
+              custom={trigger}
+              variants={arrowAnimation}
+              initial="hidden"
+              animate="visible"
+            >
+              <ArrowUpwardIcon />
+            </motion.div>
           </Fab>
         </motion.div>
         <Fab
