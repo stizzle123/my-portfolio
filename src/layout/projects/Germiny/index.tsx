@@ -15,6 +15,7 @@ const Germiny = () => {
   const { ref, inView } = useInView({
     root: null,
     threshold: 0,
+    initialInView: true,
   });
 
   useEffect(() => {

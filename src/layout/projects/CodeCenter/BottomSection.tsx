@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-import { Grid, Hidden, Typography, Skeleton } from "@mui/material";
+import { Grid, Hidden, Typography } from "@mui/material";
 import clsx from "clsx";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { motion, useAnimation } from "framer-motion";
 import { useInView, InView } from "react-intersection-observer";
-import ProgressiveImage from "react-progressive-graceful-image";
 
 import AnimButton from "../../../components/AnimButton";
 import useResponsive from "../../../hooks/useResponsive";
@@ -45,33 +44,19 @@ const BottomSection = () => {
         spacing={5}
       >
         <Grid item md={6} sm={12}>
-          <ProgressiveImage
+          <motion.img
             src={`/img/codecenter-lg-min.webp`}
-            placeholder={`/img/codecenter-lg-min.webp`}
-          >
-            {(src: any, loading: boolean) =>
-              loading ? (
-                <Skeleton
-                  sx={{ height: 600, background: "#ccc" }}
-                  className={clsx(classes.imgWrapper, classes.imgAbsolute)}
-                />
-              ) : (
-                <motion.img
-                  src={src}
-                  alt="codecenter"
-                  className={clsx(classes.imgWrapper, classes.imgAbsolute)}
-                  initial={{
-                    y: 0,
-                  }}
-                  animate={controls}
-                  draggable={false}
-                  loading="lazy"
-                  width="100"
-                  height="110%"
-                />
-              )
-            }
-          </ProgressiveImage>
+            alt="codecenter"
+            className={clsx(classes.imgWrapper, classes.imgAbsolute)}
+            initial={{
+              y: 0,
+            }}
+            animate={controls}
+            draggable={false}
+            loading="lazy"
+            width="100"
+            height="110%"
+          />
         </Grid>
         <Grid item md={6} sm={12}>
           <div className={classes.mt60}>

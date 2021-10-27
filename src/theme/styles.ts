@@ -79,9 +79,9 @@ const useStyles = makeStyles(
       width: "100%",
       borderRadius: 3,
       border: `0.2px solid ${
-        theme.palette.mode === "dark" ? "transparent" : "#f1f1f1"
+        theme.palette.mode === "dark" ? "transparent" : "#e3e3e3"
       }`,
-      boxShadow: `0 0 4px ${
+      boxShadow: `0 0 2px ${
         theme.palette.mode === "light"
           ? "rgba(139, 138, 138, 0.161)"
           : "rgba(0, 0, 0, 0.161)"

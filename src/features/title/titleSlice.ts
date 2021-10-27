@@ -18,19 +18,19 @@ const initialState: State = {
 
 export const setTitleAsync = createAsyncThunk(
   "title/setTitle",
-  async (title: string | any) => {
+  (title: string | any) => {
     return title;
   }
 );
 export const setTimelineAsync = createAsyncThunk(
   "timeline/setTimeline",
-  async (timeline: string | any) => {
+  (timeline: string | any) => {
     return timeline;
   }
 );
 export const setCountAsync = createAsyncThunk(
   "count/setCount",
-  async (count: string | any) => {
+  (count: string | any) => {
     return count;
   }
 );

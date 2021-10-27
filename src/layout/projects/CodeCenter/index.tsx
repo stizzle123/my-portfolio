@@ -16,6 +16,7 @@ const CodeCenter = () => {
   const { ref, inView } = useInView({
     root: null,
     threshold: 0,
+    initialInView: true,
   });
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const CodeCenter = () => {
       dispatch(setTimelineAsync("2017 - 2019"));
       dispatch(setCountAsync("01"));
     }
-  }, [dispatch, inView]);
+  }, [inView, dispatch]);
 
   return (
     <div id="codecenter" ref={ref}>

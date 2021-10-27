@@ -23,7 +23,7 @@ function Header() {
       >
         <Grid item>
           <ScrollRevealContainer>
-            <Typography variant="subtitle2" color={colors.lightGrey}>
+            <Typography variant="subtitle1" color={colors.lightGrey}>
               Frontend Developer & Product Manager
             </Typography>
           </ScrollRevealContainer>

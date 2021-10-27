@@ -65,7 +65,7 @@ const BottomSection = () => {
         </ScrollRevealContainer>
         <ScrollRevealContainer>
           <Typography
-            variant="subtitle1"
+            variant="subtitle2"
             sx={{
               color: "#b1b1b1",
               marginTop: 5,

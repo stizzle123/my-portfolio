@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import { GridListItems } from "../../../components";
 import { ItemProps } from "../../../types";
 import ScrollRevealContainer from "../../../components/ScrollRevealContainer";
+import { useStyles } from "../../../theme";
 
 const jobs: ItemProps[] = [
   {
@@ -42,10 +43,21 @@ const jobs: ItemProps[] = [
 ];
 
 const BottomSection = () => {
+  const classes = useStyles();
   return (
     <div>
       <ScrollRevealContainer>
-        <Typography gutterBottom>Job History</Typography>
+        <Typography
+          gutterBottom
+          sx={{
+            letterSpacing: 2,
+            textTransform: "uppercase",
+            fontSize: 15,
+          }}
+          className={classes.lightPurpleText}
+        >
+          Job History
+        </Typography>
       </ScrollRevealContainer>
       {jobs.map((item, index) => (
         <GridListItems

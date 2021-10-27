@@ -16,6 +16,7 @@ const Rsedge = () => {
   const dispatch = useDispatch();
   const { ref, inView } = useInView({
     threshold: THRESHOLD,
+    initialInView: true,
   });
   useEffect(() => {
     //@ts-ignore

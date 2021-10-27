@@ -17,6 +17,7 @@ const Xtraders = () => {
 
   const { ref, inView } = useInView({
     threshold: THRESHOLD,
+    initialInView: true,
   });
 
   useEffect(() => {
@@ -26,7 +27,7 @@ const Xtraders = () => {
       dispatch(setTimelineAsync("2020 (Contract)"));
       dispatch(setCountAsync("02"));
     }
-  }, [dispatch, inView]);
+  }, [inView, dispatch]);
 
   return (
     <div id="xtraders" ref={ref}>
