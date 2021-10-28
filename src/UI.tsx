@@ -28,44 +28,54 @@ const UI: React.FC<IProps> = ({ toggleTheme, type }) => {
   };
 
   return (
-    <div
-      style={{
-        transition: "all 200ms ease-in-out",
-      }}
-    >
+    <>
       <Helmet>
         <meta content="website" property="og:type" />
         <meta content="https://arifayanidowu.com/" property="og:url" />
+        <meta
+          property="og:title"
+          content="Frontend Developer - Arifayan Idowu"
+        />
+        <meta
+          property="og:site_name"
+          content="Frontend Developer - Arifayan Idowu"
+        />
         <script type="application/ld+json">
           {organizationStructuredData()}
         </script>
       </Helmet>
-      <motion.div
+      <div
         style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          height: 2,
-          zIndex: 9999999999999,
-          background: "red",
-          width: "100%",
-          scaleX: width,
-          originX: 0,
+          transition: "all 200ms ease-in-out",
         }}
-        initial={{
-          originX: 0,
-        }}
-        transition={transition}
-      />
-      <Header />
-      <NavBar {...{ type }} />
-      <CodeCenter />
-      <Xtraders />
-      <Rsedge />
-      <Germiny />
-      <WorkHistory />
-      <ToggleThemeButton {...{ toggleTheme, type }} />
-    </div>
+      >
+        <motion.div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            height: 2,
+            zIndex: 9999999999999,
+            background: "red",
+            width: "100%",
+            scaleX: width,
+            originX: 0,
+          }}
+          initial={{
+            originX: 0,
+          }}
+          transition={transition}
+        />
+        <Header />
+        <NavBar {...{ type }} />
+        <CodeCenter />
+        <Xtraders />
+        <Rsedge />
+        <Germiny />
+        <WorkHistory />
+        <ToggleThemeButton {...{ toggleTheme, type }} />
+      </div>
+    </>
   );
 };
 
