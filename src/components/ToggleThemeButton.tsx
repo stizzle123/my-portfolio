@@ -80,6 +80,9 @@ const ToggleThemeButton = ({ toggleTheme, type }: Props) => {
               variants={arrowAnimation}
               initial="hidden"
               animate="visible"
+              style={{
+                display: "flex",
+              }}
             >
               <ArrowUpwardIcon />
             </motion.div>

@@ -21,6 +21,7 @@ const ScrollRevealContainer = ({ children }: Props) => {
           stiffness: 300,
           damping: 100,
           duration: 5,
+          delay: 0.2,
         },
       });
     }
